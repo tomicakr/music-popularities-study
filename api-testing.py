@@ -65,4 +65,4 @@ for country, hdi in country_hdi.collect():
 	countryTags = sparkCountryTracks.map(tagsExtractor)
 	print(countryTags.collect())
 
-
+  
