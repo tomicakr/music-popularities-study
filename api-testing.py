@@ -72,14 +72,20 @@ def tagsExtractor(track):
         #sparkTopTags = sparkTopTagsAndLinks.map(lambda ob: ob['name'])
         return tags
 
+# def aggregateTags(collectedTags, tag):
+#     if collectedTags
+
 for country, hdi in country_hdi.collect():
-    response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit=500".format(country))
+    response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit=5".format(country))
     response = json.loads(response.content)
     if 'tracks' in response.keys():
         sparkCountryTracks = sc.parallelize(response['tracks']['track'])
         countryTags = sparkCountryTracks.map(tagsExtractor)
+        countryTags = countryTags.flatMap(lambda x: x)
+        countryTags = countryTags.map(lambda x: (x, 1))
+        countryTags = countryTags.groupByKey()
+        countryTags = countryTags.map(lambda x: (x[0], sum(x[1])))
         print("{}: ".format(country))
         for tags in countryTags.collect():
             print("     {}".format(tags))
 
-  
