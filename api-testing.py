@@ -101,7 +101,7 @@ def tagsExtractor(track):
 
 for group in country_hdi_groups:
     print("new group\n")
-    groupsHDI = []
+    hdiGroupsTags = []
     for country, hdi in group:
         response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit=5".format(country))
         response = json.loads(response.content)
@@ -112,18 +112,23 @@ for group in country_hdi_groups:
             countryTags = countryTags.map(lambda x: (x, 1))
             countryTags = countryTags.groupByKey()
             countryTags = countryTags.map(lambda x: (x[0], sum(x[1])))
-            groupsHDI.extend(list(countryTags.collect()))
+            hdiGroupsTags.extend(list(countryTags.collect()))
 
             # print("{}: ".format(country))
             # for tags in countryTags.collect():
             #     print("     {}".format(tags))
 
-    groupsHDI = sc.parallelize(groupsHDI)
-    groupsHDI = groupsHDI.groupByKey()
-    groupsHDI = groupsHDI.map(lambda x: (x[0], sum(x[1])))
+    hdiGroupsTags = sc.parallelize(hdiGroupsTags)
+    hdiGroupsTags = hdiGroupsTags.groupByKey()
+    hdiGroupsTags = hdiGroupsTags.map(lambda x: (x[0], sum(x[1])))
 
+    summ =  hdiGroupsTags.map(lambda x: x[1]).reduce(lambda x, y: x + y)
+    print("sum = {}".format(summ))
+
+    avg = summ/hdiGroupsTags.count()
+    print("avg = {}".format(avg))
     print("{}: ".format(group))
-    for tags in groupsHDI.collect():
+    for tags in hdiGroupsTags.collect():
         print("     {}".format(tags))
 
     print("\n")
