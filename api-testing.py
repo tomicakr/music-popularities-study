@@ -45,7 +45,7 @@ file = sc.textFile(hdis)
 country_hdi = sc.textFile(hdis).filter(filterNonExistant)
 country_hdi = country_hdi.map(extract2017Hdi)
 country_hdi_groups = createHDIGroups(country_hdi)
-printGroupsRanges(country_hdi_groups)
+#printGroupsRanges(country_hdi_groups)
 
 # for line in country_hdi.collect():
 # 	# words = re.split(',', line)
@@ -99,17 +99,32 @@ def tagsExtractor(track):
 # def aggregateTags(collectedTags, tag):
 #     if collectedTags
 
-for country, hdi in country_hdi.collect():
-    response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit=5".format(country))
-    response = json.loads(response.content)
-    if 'tracks' in response.keys():
-        sparkCountryTracks = sc.parallelize(response['tracks']['track'])
-        countryTags = sparkCountryTracks.map(tagsExtractor)
-        countryTags = countryTags.flatMap(lambda x: x)
-        countryTags = countryTags.map(lambda x: (x, 1))
-        countryTags = countryTags.groupByKey()
-        countryTags = countryTags.map(lambda x: (x[0], sum(x[1])))
-        print("{}: ".format(country))
-        for tags in countryTags.collect():
-            print("     {}".format(tags))
+for group in country_hdi_groups:
+    print("new group\n")
+    groupsHDI = []
+    for country, hdi in group:
+        response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit=5".format(country))
+        response = json.loads(response.content)
+        if 'tracks' in response.keys():
+            sparkCountryTracks = sc.parallelize(response['tracks']['track'])
+            countryTags = sparkCountryTracks.map(tagsExtractor)
+            countryTags = countryTags.flatMap(lambda x: x)
+            countryTags = countryTags.map(lambda x: (x, 1))
+            countryTags = countryTags.groupByKey()
+            countryTags = countryTags.map(lambda x: (x[0], sum(x[1])))
+            groupsHDI.extend(list(countryTags.collect()))
+
+            # print("{}: ".format(country))
+            # for tags in countryTags.collect():
+            #     print("     {}".format(tags))
+
+    groupsHDI = sc.parallelize(groupsHDI)
+    groupsHDI = groupsHDI.groupByKey()
+    groupsHDI = groupsHDI.map(lambda x: (x[0], sum(x[1])))
+
+    print("{}: ".format(group))
+    for tags in groupsHDI.collect():
+        print("     {}".format(tags))
+
+    print("\n")
 
