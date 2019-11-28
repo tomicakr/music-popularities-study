@@ -7,6 +7,15 @@ import json
 
 sc = SparkContext()
 
+def getSongInfo(mbid):
+    return requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&mbid={}&format=json".format(mbid))
+
+def getSongInfoArtistAndName(artist, trackName):
+    return requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&artist={}&track={}&format=json".format(artist, trackName))
+
+def getSongs(country, limit):
+    return requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit={}".format(country, limit))
+
 def extract2017Hdi(line):
     words = re.split(',', line)
     country = words[1].replace('"', '').lower()
@@ -15,10 +24,8 @@ def extract2017Hdi(line):
 
 def filterNonExistant(line):
     words = re.split(',', line)
-    #print(words[-1])
     return words[-1].replace('"', '').replace('.','').isdigit()
 
-#we will have 9 groups with 19 countries, and one with 18
 def createHDIGroups(country_hdi):
     country_hdi = country_hdi.sortBy(lambda x: x[1]).collect()
     number_of_groups = 10
@@ -39,97 +46,57 @@ def printGroupsRanges(country_groups):
         end_range = group[-1][1]
         print("{} - {} : {}".format(begin_range, end_range, end_range-begin_range))
 
-# there are 189 countries with hdi data
+def tagsExtractor(track):
+    mbid = track['mbid'].replace('"', '')
+    response = None
+    if mbid != '':
+        response = getSongInfo(mbid)
+    else:
+        artist = track['artist']['name']
+        trackName = track['name']
+        response = getSongInfoArtistAndName(artist, trackName)
+    
+    response = json.loads(response.content)
+    if 'track' in response.keys():
+        topTagsAndLinks = response['track']['toptags']['tag']
+        tags = []
+        for tagsAndLinks in topTagsAndLinks:
+            tags.append(tagsAndLinks['name'])
+        return tags
+
 hdis = './hdis.csv'
 file = sc.textFile(hdis)
 country_hdi = sc.textFile(hdis).filter(filterNonExistant)
 country_hdi = country_hdi.map(extract2017Hdi)
 country_hdi_groups = createHDIGroups(country_hdi)
-#printGroupsRanges(country_hdi_groups)
-
-# for line in country_hdi.collect():
-# 	# words = re.split(',', line)
-# 	# country = words[1]
-# 	# hdi = words[-1]
-# 	country, hdi = line
-# 	print("{} : {}".format(country, hdi))
-
-# first = country_hdi.collect()[0]
-# response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json".format(first[0]))
-# response = json.loads(response.content)
-
-# #print(json.dumps(response, indent=2))
-# #print(json.dumps(response['tracks']['track'][0]['mbid'], indent=2))
-# mbid = response['tracks']['track'][0]['mbid'].replace('"', '')
-
-# response = requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&mbid={}&format=json".format(mbid))
-# response = json.loads(response.content)
-
-# topTagsAndLinks = response['track']['toptags']['tag']
-# sparkTopTagsAndLinks = sc.parallelize(topTagsAndLinks)
-# sparkTopTags = sparkTopTagsAndLinks.map(lambda ob: ob['name'])
-# print(sparkTopTags.collect())
-
-# # for country, hdi in country_hdi.collect():	
-# # 	response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json".format(country))
-
-def tagsExtractor(track):
-    mbid = track['mbid'].replace('"', '')
-    response = None
-    if mbid != '':
-        response = requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&mbid={}&format=json".format(mbid))
-    else:
-        artist = track['artist']['name']
-        trackName = track['name']
-        response = requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&artist={}&track={}&format=json".format(artist, trackName))
-    
-    response = json.loads(response.content)
-    # print(json.dumps(response, indent=2))
-    # print(response.keys())
-    if 'track' in response.keys():
-        topTagsAndLinks = response['track']['toptags']['tag']
-        #sparkTopTagsAndLinks = sc.parallelize(topTagsAndLinks)
-        tags = []
-        for tagsAndLinks in topTagsAndLinks:
-            tags.append(tagsAndLinks['name'])
-
-        #sparkTopTags = sparkTopTagsAndLinks.map(lambda ob: ob['name'])
-        return tags
-
-# def aggregateTags(collectedTags, tag):
-#     if collectedTags
 
 for group in country_hdi_groups:
-    print("new group\n")
     hdiGroupsTags = []
     for country, hdi in group:
-        response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit=5".format(country))
+        response = getSongs(country, limit)
         response = json.loads(response.content)
         if 'tracks' in response.keys():
             sparkCountryTracks = sc.parallelize(response['tracks']['track'])
-            countryTags = sparkCountryTracks.map(tagsExtractor)
-            countryTags = countryTags.flatMap(lambda x: x)
-            countryTags = countryTags.map(lambda x: (x, 1))
-            countryTags = countryTags.groupByKey()
-            countryTags = countryTags.map(lambda x: (x[0], sum(x[1])))
+            countryTags = sparkCountryTracks
+                                .map(tagsExtractor)
+                                .flatMap(lambda x: x)
+                                .map(lambda x: (x, 1))
+                                .groupByKey()
+                                .map(lambda x: (x[0], sum(x[1])))
+            
             hdiGroupsTags.extend(list(countryTags.collect()))
 
-            # print("{}: ".format(country))
-            # for tags in countryTags.collect():
-            #     print("     {}".format(tags))
-
     hdiGroupsTags = sc.parallelize(hdiGroupsTags)
-    hdiGroupsTags = hdiGroupsTags.groupByKey()
-    hdiGroupsTags = hdiGroupsTags.map(lambda x: (x[0], sum(x[1])))
+                            .groupByKey()
+                            .map(lambda x: (x[0], sum(x[1])))
 
     summ =  hdiGroupsTags.map(lambda x: x[1]).reduce(lambda x, y: x + y)
-    print("sum = {}".format(summ))
 
     avg = summ/hdiGroupsTags.count()
     print("avg = {}".format(avg))
+
     print("{}: ".format(group))
     for tags in hdiGroupsTags.collect():
         print("     {}".format(tags))
 
     print("\n")
-
