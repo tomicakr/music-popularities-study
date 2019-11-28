@@ -18,17 +18,41 @@ def filterNonExistant(line):
     #print(words[-1])
     return words[-1].replace('"', '').replace('.','').isdigit()
 
+#we will have 9 groups with 19 countries, and one with 18
+def createHDIGroups(country_hdi):
+    country_hdi = country_hdi.sortBy(lambda x: x[1]).collect()
+    number_of_groups = 10
+    number_of_countries = 19
+    country_hdi_groups = []
+    for i in range(0,number_of_groups):
+        if i==number_of_groups-1:
+            country_hdi_groups.append(country_hdi[number_of_countries*i : ])
+            break
+        country_hdi_groups.append(country_hdi[number_of_countries*i : number_of_countries*(i+1)])
+    return country_hdi_groups
+
+def printGroupsRanges(country_groups):
+    number_of_groups = len(country_groups)
+    for i in range (0, number_of_groups):
+        group = country_groups[i]
+        begin_range = group[0][1]
+        end_range = group[-1][1]
+        print("{} - {} : {}".format(begin_range, end_range, end_range-begin_range))
+
+# there are 189 countries with hdi data
 hdis = './hdis.csv'
 file = sc.textFile(hdis)
 country_hdi = sc.textFile(hdis).filter(filterNonExistant)
 country_hdi = country_hdi.map(extract2017Hdi)
+country_hdi_groups = createHDIGroups(country_hdi)
+printGroupsRanges(country_hdi_groups)
 
-# # for line in country_hdi.collect():
-# # 	# words = re.split(',', line)
-# # 	# country = words[1]
-# # 	# hdi = words[-1]
-# # 	country, hdi = line
-# # 	print("{} : {}".format(country, hdi))
+# for line in country_hdi.collect():
+# 	# words = re.split(',', line)
+# 	# country = words[1]
+# 	# hdi = words[-1]
+# 	country, hdi = line
+# 	print("{} : {}".format(country, hdi))
 
 # first = country_hdi.collect()[0]
 # response = requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json".format(first[0]))
