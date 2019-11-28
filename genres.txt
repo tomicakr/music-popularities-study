@@ -3,9 +3,9 @@ Art Punk
 Alternative Rock
 Britpunk
 College Rock
-Crossover Thrash (thx Kevin G)
-Crust Punk (thx Haug)
-Emotional Hardcore (emo / emocore) – (Thanks Timothy)
+Crossover Thrash
+Crust Punk
+Emotional Hardcore
 Experimental Rock
 Folk Punk
 Goth / Gothic Rock
@@ -13,13 +13,13 @@ Grunge
 Hardcore Punk
 Hard Rock
 Indie Rock
-Lo-fi (hat tip to Ben Vee Bedlamite)
+Lo-fi
 Musique Concrète
 New Wave
 Progressive Rock
 Punk
-Shoegaze (with thx to Jackie Herrera)
-Steampunk (with thx to Christopher Schaeffer)
+Shoegaze
+Steampunk
 Anime
 Blues
 Acoustic Blues
@@ -53,7 +53,7 @@ NY Blues
 Piano Blues
 Piedmont Blues
 Punk Blues
-Ragtime Blues (cheers GFS)
+Ragtime Blues
 Rhythm Blues
 Soul Blues
 St. Louis Blues
@@ -63,9 +63,7 @@ Texas Blues
 Urban Blues
 Vandeville
 West Coast Blues
-Zydeco (thx Naomi McElynn – also under ‘World’ genre)
-
-
+Zydeco
 Children’s Music
 Lullabies
 Sing-Along
@@ -82,9 +80,9 @@ Choral
 Classical Crossover
 Concerto
 Concerto Grosso
-Contemporary Classical (thx Julien Palliere)
+Contemporary Classical
 Early Music
-Expressionist (thx Mr. Palliere)
+Expressionist
 High Classical
 Impressionist
 Mass Requiem
@@ -97,18 +95,18 @@ Oratorio
 Orchestral
 Organum
 Renaissance
-Romantic (early period)
-Romantic (later period)
+Romantic
+Romantic
 Sonata
 Symphonic
 Symphony
 Wedding Music
 Comedy
 Novelty
-Parody Music (Weird Al!)
+Parody Music
 Stand-up Comedy
-Vaudeville (cheers Ben Vee Bedlamite)
-Commercial (thank you Sheldon Reynolds)
+Vaudeville
+Commercial
 Jingles
 TV Themes
 Country
@@ -127,7 +125,7 @@ Close Harmony
 Contemporary Bluegrass
 Contemporary Country
 Country Gospel
-Country Pop (thanks Sarah Johnson)
+Country Pop
 Country Rap
 Country Rock
 Country Soul
@@ -155,8 +153,8 @@ Truck-Driving Country
 Urban Cowboy
 Western Swing
 Zydeco
-Dance (EDM – Electronic Dance Music – see Electronic below – with thx to Eric Shaffer-Whiting & Drew :-))
-Club / Club Dance (thx Luke Allfree)
+Dance
+Club / Club Dance
 Breakcore
 Breakbeat / Breakstep
 4-Beat
@@ -167,18 +165,18 @@ Breakbeat Hardcore
 Broken Beat
 Florida Breaks
 Nu Skool Breaks
-Brostep (cheers Tom Berckley)
-Chillstep (thx Matt)
-Deep House (cheers Venus Pang)
+Brostep
+Chillstep
+Deep House
 Dubstep
-Electro House (thx Luke Allfree)
+Electro House
 Electroswing
 Exercise
-Future Garage (thx Ran’dom Haug)
+Future Garage
 Garage
-Glitch Hop (cheers Tom Berckley)
-Glitch Pop (thx Ran’dom Haug)
-Grime (thx Ran’dom Haug / Matthew H)
+Glitch Hop
+Glitch Pop
+Grime
 Hardcore
 Bouncy House
 Bouncy Techno
@@ -194,11 +192,9 @@ Makina
 Speedcore
 Terrorcore
 Uk Hardcore
-
-
 Hard Dance
 Hi-NRG / Eurodance
-Horrorcore (thx Matt)
+Horrorcore
 House
 Acid House
 Chicago House
@@ -222,11 +218,11 @@ Tech HouseTribal House
 UK Hard House
 US Garage
 Vocal House
-Jackin House (with thx to Jermaine Benjamin Dale Bruce)
+Jackin House
 Jungle / Drum’n’bass
-Liquid Dub(thx Ran’dom Haug)
-Regstep (thanks to ‘Melia G)
-Speedcore (cheers Matt)
+Liquid Dub
+Regstep
+Speedcore
 Techno
 Acid Techno
 Detroit Techno
@@ -254,7 +250,7 @@ Tech Trance
 Uplifting Trance
 Orchestral Uplifting
 Vocal Trance
-Trap (thx Luke Allfree)
+Trap
 Disney
 Easy Listening
 Background
@@ -265,8 +261,8 @@ Lounge
 Middle of the Road
 Swing
 Electronic
-2-Step (thx Ran’dom Haug)
-8bit – aka 8-bit, Bitpop and Chiptune – (thx Marcel Borchert)
+2-Step
+8bit
 Ambient
 Ambient Dub
 Ambient House
@@ -277,15 +273,15 @@ Illbient
 Isolationism
 Lowercase
 Asian Underground
-Bassline (thx Leon Oliver)
-Chillwave(thx Ran’dom Haug)
-Chiptune (kudos to Dominik Landahl)
+Bassline
+Chillwave
+Chiptune
 Bitpop
 Game Boy
 Nintendocore
 Video Game Music
 Yorkshire Bleeps and Bass
-Crunk (with thx to Jillian Edwards)
+Crunk
 Downtempo
 Acid Jazz
 Balearic Beat
@@ -296,7 +292,7 @@ Ethnic Electronica
 Moombahton
 Nu Jazz
 Trip Hop
-Drum & Bass (thx Luke Allfree)
+Drum & Bass
 Darkcore
 Darkstep
 Drumfunk
@@ -317,9 +313,7 @@ Crunk
 Electro Backbeat
 Electro-Grime
 Electropop
-
-
-Electro-swing (thank you Daniel Forthofer)
+Electro-swing
 Electroacoustic
 Acousmatic Music
 Computer Music
@@ -362,14 +356,14 @@ Eurodance
 Bubblegum Dance
 Italo Dance
 Turbofolk
-Hardstyle (kudos to Dominik Landahl)
+Hardstyle
 Hi-Nrg
 Eurobeat
 Hard Nrg
 New Beat
 IDM/Experimental
 Industrial
-Trip Hop (thank you Michael Tait Tafoya)
+Trip Hop
 UK Garage
 2-Step
 4×4
@@ -378,7 +372,7 @@ Grime
 Speed Garage
 Enka
 French Pop
-Folk Music (also under various other categories)
+Folk Music
 American Folk Revival
 Anti-Folk
 British Folk Revival
@@ -411,8 +405,6 @@ Brick City Club
 Hardcore Hip Hop
 Mafioso Rap
 New Jersey Hip Hop
-
-
 Freestyle Rap
 G-Funk
 Gangsta Rap
@@ -440,7 +432,7 @@ New Jack Swing
 New School Hip Hop
 Old School Rap
 Rap
-Turntablism (thank you Luke Allfree)
+Turntablism
 Underground Rap
 West Coast Rap
 Holiday
@@ -478,7 +470,7 @@ Japanoise
 Power Electronics
 Power Noise
 Witch House
-Inspirational – Christian & Gospel
+Inspirational
 CCM
 Christian Metal
 Christian Pop
@@ -489,46 +481,46 @@ Contemporary Gospel
 Gospel
 Christian & Gospel
 Praise & Worship
-Qawwali (with thx to Jillian Edwards)
+Qawwali
 Southern Gospel
 Traditional Gospel
 Instrumental
-March (Marching Band)
-J-Pop (also under ‘Asian’)
+March
+J-Pop
 J-Rock
 J-Synth
 J-Ska
 J-Punk
 Jazz
-Acid Jazz (with thx to Hunter Nelson)
+Acid Jazz
 Avant-Garde Jazz
-Bebop (thx Mwinogo1)
+Bebop
 Big Band
-Blue Note (with thx to Jillian Edwards)
+Blue Note
 Contemporary Jazz
 Cool
 Crossover Jazz
 Dixieland
-Ethio-jazz (with thx to Jillian Edwards)
+Ethio-jazz
 Fusion
-Gypsy Jazz (kudos to Mike Tait Tafoya)
+Gypsy Jazz
 Hard Bop
 Latin Jazz
 Mainstream Jazz
 Ragtime
 Smooth Jazz
 Trad Jazz
-K-Pop (also under ‘Asian’)
+K-Pop
 Karaoke
 Kayokyoku
 Latin
 Alternativo & Rock Latino
-Argentine tango (gracias P. Moth & Sandra Sanders)
+Argentine tango
 Bachata
 Baithak Gana
 Baladas y Boleros
 Bolero
-Bossa Nova (with thx to Marcos José Sant’Anna Magalhães & Alex Ede for the reclassification)
+Bossa Nova
 Brazilian
 Axé
 Bossa Nova
@@ -548,19 +540,18 @@ Samba Rock
 Tecnobrega
 Tropicalia
 Zouk-Lambada
-
-
 Chicha
 Criolla
 Contemporary Latin
-Cumbia (gracias Richard Kemp)
-Flamenco / Spanish Flamenco (thank you Michael Tait Tafoya & Sandra Sanders)
+Cumbia
+Flamenco
+Spanish Flamenco
 Huayno
 Latin Jazz
 Mariachi
-Nuevo Flamenco (and again Michael Tafoya)
+Nuevo Flamenco
 Pop Latino
-Portuguese fado (and again Sandra Sanders)
+Portuguese fado
 Punta
 Punta Rock
 Ranchera
@@ -588,8 +579,8 @@ Adult Contemporary
 Arab Pop
 Baroque
 Britpop
-Bubblegum Pop (thx Haug & John Maher)
-Chamber Pop (thx Haug)
+Bubblegum Pop
+Chamber Pop
 Chanson
 Christian Pop
 Classical Crossover
@@ -602,8 +593,8 @@ Laïkó
 Nederpop
 Russian Pop
 Dance Pop
-Dream Pop (thx Haug)
-Electro Pop (thx Haug)
+Dream Pop
+Electro Pop
 Iranian Pop
 Jangle Pop
 Latin Ballad
@@ -612,12 +603,12 @@ Louisiana Swamp Pop
 Mexican Pop
 Motorpop
 New Romanticism
-Orchestral Pop (thx Haug)
+Orchestral Pop
 Pop Rap
 Popera
 Pop/Rock
-Pop Punk (thx Makenzie)
-Power Pop (thx Haug)
+Pop Punk
+Power Pop
 Psychedelic Pop
 Schlager
 Soft Rock
@@ -625,7 +616,7 @@ Sophisti-Pop
 Space Age Pop
 Sunshine Pop
 Surf Pop
-Synthpop (thx Haug)
+Synthpop
 Teen Pop
 Traditional Pop Music
 Turkish Pop
@@ -644,20 +635,20 @@ Progressive Drum & Bass
 Progressive Techno
 R&B/Soul
 Contemporary R&B
-Disco (not a top level genre Sheldon Reynolds!)
+Disco
 Doo Wop
 Funk
-Modern Soul (Cheers Nik)
+Modern Soul
 Motown
 Neo-Soul
-Northern Soul (Cheers Nik & John Maher)
-Psychedelic Soul (thank you John Maher)
+Northern Soul
+Psychedelic Soul
 Quiet Storm
 Soul
-Soul Blues (Cheers Nik)
-Southern Soul (Cheers Nik)
+Soul Blues
+Southern Soul
 Reggae
-2-Tone (thx GFS)
+2-Tone
 Dancehall
 Dub
 Roots Reggae
@@ -671,18 +662,16 @@ Lovers Rock
 Raggamuffin
 Ragga
 Dancehall
-
-
 Ska
 2 Tone
 Dub
 Rocksteady
 Rock
-Acid Rock (with thanks to Alex Antonio)
-Adult-Oriented Rock (thanks to John Maher)
+Acid Rock
+Adult-Oriented Rock
 Afro Punk
 Adult Alternative
-Alternative Rock (thx Caleb Browning)
+Alternative Rock
 American Traditional Rock
 Anatolian Rock
 Arena Rock
@@ -691,53 +680,53 @@ Blues-Rock
 British Invasion
 Cock Rock
 Death Metal / Black Metal
-Doom Metal (thx Kevin G)
+Doom Metal
 Glam Rock
-Gothic Metal (fits here Sam DeRenzis – thx)
+Gothic Metal
 Grind Core
 Hair Metal
 Hard Rock
-Math Metal (cheers Kevin)
-Math Rock (thx Ran’dom Haug)
+Math Metal
+Math Rock
 Metal
-Metal Core (thx Ran’dom Haug)
-Noise Rock (genre – Japanoise – thx Dominik Landahl)
+Metal Core
+Noise Rock
 Jam Bands
-Post Punk (thx Ben Vee Bedlamite)
+Post Punk
 Prog-Rock/Art Rock
-Progressive Metal (thx Ran’dom Haug)
+Progressive Metal
 Psychedelic
 Rock & Roll
-Rockabilly (it’s here Mark Murdock!)
+Rockabilly
 Roots Rock
 Singer/Songwriter
 Southern Rock
-Spazzcore (thx Haug)
-Stoner Metal (duuuude)
+Spazzcore
+Stoner Metal
 Surf
-Technical Death Metal (cheers Pierre)
+Technical Death Metal
 Tex-Mex
-Thrash Metal (thanks to Pierre A)
-Time Lord Rock (Trock) ~ (thanks to ‘Melia G)
-Trip-hop (Ta Will)
+Thrash Metal
+Time Lord Rock
+Trip-hop
 Singer/Songwriter
 Alternative Folk
 Contemporary Folk
 Contemporary Singer/Songwriter
-Indie Folk (with thanks to Andrew Barrett)
+Indie Folk
 Folk-Rock
-Love Song (Chanson – merci Marcel Borchert)
+Love Song
 New Acoustic
 Traditional Folk
 Soundtrack
 Foreign Cinema
-Movie Soundtrack (thanks Julien)
+Movie Soundtrack
 Musicals
 Original Score
 Soundtrack
 TV Soundtrack
 Spoken Word
-Tex-Mex / Tejano (with thx to Israel Lopez)
+Tex-Mex / Tejano
 Chicano
 Classic
 Conjunto
@@ -745,11 +734,11 @@ Conjunto Progressive
 New Mex
 Tex-Mex
 Vocal
-A cappella (with kudos to Sheldon Reynolds)
-Barbershop (with thx to Kelly Chism)
-Cantique (sacred vocal)
-Doo-wop (with thx to Bradley Thompson)
-Gregorian Chant (hat tip to Deborah Knight-Nikifortchuk)
+A cappella
+Barbershop
+Cantique
+Doo-wop
+Gregorian Chant
 Standards
 Traditional Pop
 Vocal Jazz
@@ -817,7 +806,7 @@ Taiwanese Pop
 Sawt
 Australia
 Cajun
-Calypso (thx Gerald John)
+Calypso
 Caribbean
 Chutney
 Chutney Soca
@@ -825,28 +814,26 @@ Compas
 Mambo
 Merengue
 Méringue
-
-
-Carnatic (Karnataka Sanghetha – thx Abhijith)
+Carnatic
 Celtic
 Celtic Folk
 Contemporary Celtic
-Coupé-décalé (thx Samy) – Congo
-Dangdut (thank you Achmad Ivanny)
+Coupé-décalé
+Dangdut
 Drinking Songs
-Drone (with thx to Robert Conrod)
+Drone
 Europe
 France
 Hawaii
 Japan
 Klezmer
-Mbalax (thank you Samy) – Senegal
+Mbalax
 Middle East
 North America
-Ode (thank you Sheldon Reynolds)
-Piphat (cheers Samy B) – Thailand
+Ode
+Piphat
 Polka
-Soca (thx Gerald John)
+Soca
 South Africa
 South America
 South / Southeast Asia
@@ -856,8 +843,8 @@ Bhojpuri
 Dangdut
 Filmi
 Indian Pop
-Hindustani (thank you Abhijith)
-Indian Ghazal (thank you Gitika Thakur)
+Hindustani
+Indian Ghazal
 Lavani
 Luk Thung
 Luk Krung
