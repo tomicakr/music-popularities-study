@@ -14,7 +14,7 @@ Hardcore Punk
 Hard Rock
 Indie Rock
 Lo-fi
-Musique Concrète
+Musique Concrete
 New Wave
 Progressive Rock
 Punk
@@ -302,7 +302,7 @@ Intelligent Drum and Bass
 Jump-Up
 Liquid Funk
 Neurofunk
-Oldschool Jungle:
+Oldschool Jungle
 Darkside Jungle
 Ragga Jungle
 Raggacore
@@ -366,7 +366,6 @@ Industrial
 Trip Hop
 UK Garage
 2-Step
-4×4
 Bassline
 Grime
 Speed Garage
@@ -438,16 +437,6 @@ West Coast Rap
 Holiday
 Chanukah
 Christmas
-Christmas: Children’s
-Christmas: Classic
-Christmas: Classical
-Christmas: Comedy
-Christmas: Jazz
-Christmas: Modern
-Christmas: Pop
-Christmas: R&B
-Christmas: Religious
-Christmas: Rock
 Easter
 Halloween
 Holiday: Other
@@ -463,7 +452,6 @@ Electro-Industrial
 Electronic Body Music
 Futurepop
 Industrial Metal
-Neue Deutsche Härte
 Industrial Rock
 Noise
 Japanoise
@@ -555,7 +543,6 @@ Portuguese fado
 Punta
 Punta Rock
 Ranchera
-Raíces
 Raison
 Reggaeton y Hip-Hop
 Regional Mexicano
@@ -589,7 +576,6 @@ Austropop
 Balkan Pop
 French Pop
 Latin Pop
-Laïkó
 Nederpop
 Russian Pop
 Dance Pop
@@ -653,7 +639,7 @@ Dancehall
 Dub
 Roots Reggae
 Reggae Fusion
-Reggae en Español
+Reggae en Espanol
 Spanish Reggae
 Reggae 110
 Reggae Bultrón
@@ -755,14 +741,14 @@ Bikutsi
 Bongo Flava
 Cape Jazz
 Chimurenga
-Coupé-Décalé
+Coupe-Decale
 Fuji Music
 Genge
 Highlife
 Hiplife
 Isicathamiya
 Jit
-Jùjú
+Juju
 Kapuka
 Kizomba
 Kuduro
@@ -777,7 +763,7 @@ Mbube
 Morna
 Museve
 Palm-Wine
-Raï
+Rai
 Sakara
 Sega
 Seggae
@@ -797,7 +783,7 @@ J-Pop
 Japanese Pop
 K-Pop
 Khaliji
-Kayōkyoku
+Kayokyoku
 Korean Pop
 Liwa
 Mandopop
@@ -813,12 +799,12 @@ Chutney Soca
 Compas
 Mambo
 Merengue
-Méringue
+Meringue
 Carnatic
 Celtic
 Celtic Folk
 Contemporary Celtic
-Coupé-décalé
+Coupe-decale
 Dangdut
 Drinking Songs
 Drone
