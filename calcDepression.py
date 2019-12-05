@@ -19,27 +19,6 @@ def cleanup(tag_number):
     return newTag, number
 
 for group in country_depression_groups:
-    depressionGroupsTags = []
-    for country, hdi in group:
-        i = 1
-        while True:
-            print(i)
-            response = getSongs(country, 1000, i)
-            i += 1
-            response = json.loads(response.content)
-            if response == b'':
-                break
-            if 'tracks' in response.keys() and response['tracks']['track'] is not None:
-                sparkCountryTracks = sc.parallelize(response['tracks']['track'])
-                countryTags = sparkCountryTracks.map(tagsExtractor)
-                countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
-                depressionGroupsTags.extend(list(countryTags.collect()))
-
-    depressionGroupsTags = sc.parallelize(depressionGroupsTags).reduceByKey(lambda x, y: x + y)
-    summ =  depressionGroupsTags.map(lambda x: x[1]).reduce(lambda x, y: x + y)
-    avg = summ/depressionGroupsTags.count()
-
-for group in country_depression_groups:
     for line in genres_clean.collect():
         genres_dict[line] = 0
 
