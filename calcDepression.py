@@ -20,7 +20,7 @@ for group in country_depression_groups:
             response = getSongs(country, 100, i)
             i += 1
             #print(response.content)
-            if response.content == '':
+            if response.content == b'':
                 print("end of songs --------------------------")
                 break
             response = json.loads(response.content)
