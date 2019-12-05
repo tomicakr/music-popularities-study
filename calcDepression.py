@@ -6,9 +6,13 @@ import json
 
 sc = SparkContext()
 sc.setLogLevel('ERROR')
+logger = sc._jvm.org.apache.log4j
+logger.LogManager.getLogger("org"). setLevel( logger.Level.ERROR )
+logger.LogManager.getLogger("akka").setLevel( logger.Level.ERROR )
+
 country_depression_groups = createGroups(sc.textFile('./depression.csv').filter(lambda line: re.split(',', line)[2] == "2017").filter(lambda line: re.split(',', line)[1] != "").map(lambda line: (re.split(',', line)[0], float(re.split(',', line)[3]))))
 
-printGroupsRanges(country_depression_groups)
+#printGroupsRanges(country_depression_groups)
 
 genres_dict = dict()
 genres_clean = sc.textFile('genres_clean.txt')
