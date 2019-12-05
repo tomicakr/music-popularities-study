@@ -13,19 +13,6 @@ printGroupsRanges(country_depression_groups)
 genres_dict = dict()
 genres_clean = sc.textFile('genres_clean.txt')
 
-# def extr(genres_dict, non_allocated_genres):
-
-#     def e(tag_number):
-#         tag, number = tag_number
-#         print(tag, number)
-#         genres_dict[tag] = 200
-#         if tag in genres_dict.keys():
-#             genres_dict[tag] = number
-#         else:
-#             non_allocated_genres.append(tag)
-
-#     return e
-
 def cleanup(tag_number):
     tag, number = tag_number
     newTag = tag.replace("-", " ").lower()
@@ -61,12 +48,9 @@ for group in country_depression_groups:
         if genres_dict[key] != 0:
             print("{} : {}".format(key, genres_dict[key]))
 
-    print("----------------------------------------------------------")
-    print("----------------------------------------------------------")
-    print("----------------------------------------------------------")
 
-    for g in non_allocated_genres:
-        print(g)
+    # for g in non_allocated_genres:
+    #     print(g)
     
     # summ =  depressionGroupsTags.map(lambda x: x[1]).reduce(lambda x, y: x + y)
     # avg = summ/depressionGroupsTags.count()
