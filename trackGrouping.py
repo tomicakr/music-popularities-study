@@ -10,8 +10,8 @@ def getSongInfo(mbid):
 def getSongInfoArtistAndName(artist, trackName):
     return requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&artist={}&track={}&format=json".format(artist, trackName))
 
-def getSongs(country, limit):
-    return requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit={}".format(country, limit))
+def getSongs(country, limit, page):
+    return requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key=101c6972f8adf89c5f3bdf67ff0efa0c&format=json&limit={}&page={}".format(country, limit, page))
 
 def tagsExtractor(track):
     mbid = track['mbid'].replace('"', '')
