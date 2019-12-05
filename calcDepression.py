@@ -13,7 +13,9 @@ printGroupsRanges(country_depression_groups)
 
 for group in country_depression_groups:
     depressionGroupsTags = []
+    print("new group- -----")
     for country, hdi in group:
+        print("new country")
         i = 1
         while True:
             print(i)
@@ -22,18 +24,11 @@ for group in country_depression_groups:
             #print(response.content)
             response = json.loads(response.content)
             if response == b'':
-                print("end of songs --------------------------")
                 break
-            print("loaded response")
-            print(response)
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
-                #print(response['tracks']['track'])
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
-                print("parallelization")
                 countryTags = sparkCountryTracks.map(tagsExtractor)
-                print(countryTags.collect())
                 countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).groupByKey().map(lambda x: (x[0], sum(x[1])))
-                print("maping...")
                 depressionGroupsTags.extend(list(countryTags.collect()))
 
     depressionGroupsTags = sc.parallelize(depressionGroupsTags).groupByKey().map(lambda x: (x[0], sum(x[1])))
