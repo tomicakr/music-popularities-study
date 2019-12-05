@@ -29,7 +29,9 @@ for group in country_depression_groups:
                 #print(response['tracks']['track'])
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
                 print("parallelization")
-                countryTags = sparkCountryTracks.map(tagsExtractor).flatMap(lambda x: x).map(lambda x: (x, 1)).groupByKey().map(lambda x: (x[0], sum(x[1])))
+                countryTags = sparkCountryTracks.map(tagsExtractor)
+                print(countryTags.collect())
+                countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).groupByKey().map(lambda x: (x[0], sum(x[1])))
                 print("maping...")
                 depressionGroupsTags.extend(list(countryTags.collect()))
 
