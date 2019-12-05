@@ -13,20 +13,25 @@ printGroupsRanges(country_depression_groups)
 genres_dict = dict()
 genres_clean = sc.textFile('genres_clean.txt')
 
+numberOfGroups = len(country_depression_groups)
+
 def cleanup(tag_number):
     tag, number = tag_number
     newTag = tag.replace("-", " ").lower()
     return newTag, number
 
+g = 1
 for group in country_depression_groups:
     for line in genres_clean.collect():
         genres_dict[line] = 0
+    c = 1
+    numberOfCountriesInGroup = len(group)
 
     depressionGroupsTags = []
     for country, hdi in group:
         i = 1
         while True:
-            print(i)
+            print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
             response = getSongs(country, 50, i)
             i += 1
             response = json.loads(response.content)
@@ -37,6 +42,8 @@ for group in country_depression_groups:
                 countryTags = sparkCountryTracks.map(tagsExtractor)
                 countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
                 depressionGroupsTags.extend(list(countryTags.collect()))
+        c += 1
+    g += 1
 
     depressionGroupsTags = sc.parallelize(depressionGroupsTags).reduceByKey(lambda x, y: x + y)
     depressionGroupsTags = depressionGroupsTags.map(cleanup)
