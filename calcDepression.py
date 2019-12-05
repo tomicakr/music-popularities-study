@@ -19,8 +19,8 @@ for group in country_depression_groups:
         while responseGot:
             response = getSongs(country, 1000, 100000)
             i += 1
-            response = json.loads(response.content)
             print(response)
+            response = json.loads(response.content)
             exit()
             if 'tracks' in response.keys():
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
