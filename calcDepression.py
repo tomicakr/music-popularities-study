@@ -28,10 +28,10 @@ for group in country_depression_groups:
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
                 countryTags = sparkCountryTracks.map(tagsExtractor)
-                countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).groupByKey().map(lambda x: (x[0], sum(x[1])))
+                countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
                 depressionGroupsTags.extend(list(countryTags.collect()))
 
-    depressionGroupsTags = sc.parallelize(depressionGroupsTags).groupByKey().map(lambda x: (x[0], sum(x[1])))
+    depressionGroupsTags = sc.parallelize(depressionGroupsTags)..reduceByKey(lambda x, y: x + y)
     summ =  depressionGroupsTags.map(lambda x: x[1]).reduce(lambda x, y: x + y)
     avg = summ/depressionGroupsTags.count()
 
