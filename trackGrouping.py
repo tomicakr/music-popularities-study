@@ -32,6 +32,8 @@ def tagsExtractor(track):
         if len(tags) == 0:
             tags.append('---')
         return tags
+    
+    return ['---']
 
 def createGroups(country_attribute):
     country_attribute = country_attribute.sortBy(lambda x: x[1]).collect()
