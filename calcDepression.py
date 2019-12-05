@@ -16,17 +16,20 @@ for group in country_depression_groups:
     for country, hdi in group:
         i = 0
         while True:
+            print(i)
             response = getSongs(country, 1000, i)
             i += 1
-            if i==2:
-                print(response.content)
+            #print(response.content)
             if response.content == '':
                 print("end of songs --------------------------")
                 break
             response = json.loads(response.content)
+            print("loaded response")
             if 'tracks' in response.keys():
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
+                print("parallelization")
                 countryTags = sparkCountryTracks.map(tagsExtractor).flatMap(lambda x: x).map(lambda x: (x, 1)).groupByKey().map(lambda x: (x[0], sum(x[1])))
+                print("maping...")
                 depressionGroupsTags.extend(list(countryTags.collect()))
 
     depressionGroupsTags = sc.parallelize(depressionGroupsTags).groupByKey().map(lambda x: (x[0], sum(x[1])))
