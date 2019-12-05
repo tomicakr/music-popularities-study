@@ -17,7 +17,7 @@ for group in country_depression_groups:
         i = 1
         while True:
             print(i)
-            response = getSongs(country, 1000, i)
+            response = getSongs(country, 100, i)
             i += 1
             #print(response.content)
             if response.content == '':
