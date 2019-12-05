@@ -30,8 +30,9 @@ for group in country_depression_groups:
     depressionGroupsTags = []
     for country, hdi in group:
         i = 1
+        print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
         while True:
-            print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
+            print("   page {}/5".format(i))
             response = getSongs(country, 50, i)
             i += 1
             response = json.loads(response.content)
@@ -43,7 +44,9 @@ for group in country_depression_groups:
                 countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
                 depressionGroupsTags.extend(list(countryTags.collect()))
         c += 1
+        print("")
     g += 1
+    print("\n\n")
 
     depressionGroupsTags = sc.parallelize(depressionGroupsTags).reduceByKey(lambda x, y: x + y)
     depressionGroupsTags = depressionGroupsTags.map(cleanup)
