@@ -23,13 +23,19 @@ def tagsExtractor(track):
         trackName = track['name']
         response = getSongInfoArtistAndName(artist, trackName)
     
+    if response.content is None or response.content == '':
+        return ['---']
     response = json.loads(response.content)
     if 'track' in response.keys():
         topTagsAndLinks = response['track']['toptags']['tag']
         tags = []
         for tagsAndLinks in topTagsAndLinks:
             tags.append(tagsAndLinks['name'])
+        if len(tags) == 0:
+            tags.append('---')
         return tags
+    
+    return ['---']
 
 def createGroups(country_attribute):
     country_attribute = country_attribute.sortBy(lambda x: x[1]).collect()
