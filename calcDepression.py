@@ -20,11 +20,12 @@ for group in country_depression_groups:
             response = getSongs(country, 100, i)
             i += 1
             #print(response.content)
-            if response.content == b'':
+            response = json.loads(response.content)
+            if response == b'':
                 print("end of songs --------------------------")
                 break
-            response = json.loads(response.content)
             print("loaded response")
+            print(response)
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
                 #print(response['tracks']['track'])
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
