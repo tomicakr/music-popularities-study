@@ -18,7 +18,8 @@ for group in country_depression_groups:
         while True:
             response = getSongs(country, 1000, i)
             i += 1
-            print(i)
+            if i==2:
+                print(response.content)
             if response.content == '':
                 print("end of songs --------------------------")
                 break
