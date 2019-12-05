@@ -16,7 +16,7 @@ for group in country_depression_groups:
     print("new group- -----")
     for country, hdi in group:
         print("new country")
-        i = 1
+        i = 7
         while True:
             print(i)
             response = getSongs(country, 1000, i)
