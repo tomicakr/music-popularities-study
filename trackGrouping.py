@@ -29,6 +29,7 @@ def tagsExtractor(track):
         tags = []
         for tagsAndLinks in topTagsAndLinks:
             tags.append(tagsAndLinks['name'])
+        print(tags)
         return tags
 
 def createGroups(country_attribute):
