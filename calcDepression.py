@@ -25,7 +25,8 @@ for group in country_depression_groups:
                 break
             response = json.loads(response.content)
             print("loaded response")
-            if 'tracks' in response.keys():
+            if 'tracks' in response.keys() and response['tracks']['track'] is not None:
+                print(response['tracks']['track'])
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
                 print("parallelization")
                 countryTags = sparkCountryTracks.map(tagsExtractor).flatMap(lambda x: x).map(lambda x: (x, 1)).groupByKey().map(lambda x: (x[0], sum(x[1])))
