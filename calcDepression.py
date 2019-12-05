@@ -14,7 +14,7 @@ printGroupsRanges(country_depression_groups)
 for group in country_depression_groups:
     depressionGroupsTags = []
     for country, hdi in group:
-        i = 0
+        i = 1
         while True:
             print(i)
             response = getSongs(country, 1000, i)
