@@ -2,8 +2,8 @@
 
 
 ## ABOUT THE PROJECT
-Our application has as a main target to find out if there are any correlations between the Human Development Index (HDI) or depression rates per country and music preferences all around the world.  
-The HDI is a statistic composite index of life expectancy, education, and per capita income indicators, which are used to rank countries into four tiers of human development. A country scores a higher HDI (between 0 and 1) when the lifespan is higher, the education level is higher, and the gross national income GNI per capita is higher. Moreover, we tried to associate this index with the depression rates of each country across the world in order to understand if these two affect the music genre popularity.
+Our application studies how Human Development Index (HDI) and depression rates affect music preferences all around the world.  
+The HDI is a statistic composite index of life expectancy, education, and per capita income indicators, which are used to rank countries into four tiers of human development. A country scores a higher HDI (between 0 and 1) when the lifespan is higher, the education level is higher, and the gross national income GNI per capita is higher. Moreover, we tried to associate this index with the depression rates of each country in order to understand if these two affect the music genre popularity.
 
 
 ## DATASETS
@@ -11,6 +11,13 @@ In our project we used many datasets. The first one was taken from "last.fm Web 
 The next step was to obtain the HDI indexes. We downloaded them from [here](http://hdr.undp.org/en/data); we had to choose “Dimension”: HDI, then again HDI on the next picker and then download data underneath.
 We downloaded the depression rates data from [here](https://ourworldindata.org/mental-health) other website. The newest data is from year 2017, so we based our research on the results we got for that year.
 Another dataset that was used is a list with almost 900 of the most famous music genres.
+
+
+## TARGETS
+With our project we wanted to show informations that could be useful for people interested in the argument, since it is for research purposes only.
+Our main aim was to see if music genre popularities are affected by the "human growth level" and the depression rate in each country. In simple terms, if we have a country with a low level of HDI and a high depression rate, we wanted to check if the most popular genres there are the one considered more "sad" or "emotional". At the same time, a country which has got a high score of HDI and a low depression rate might listen to "happy" genres like pop, commercial and so on.
+To conclude, since music is listened all over the world, we tried to understand if the spreadest genres in each country are related to "how people feel" internally, to how they live and to how they are used to see the world in their environment.
+
 
 
 ## WHY THE NEED FOR BIG DATA?
@@ -25,7 +32,14 @@ In order to work with the datasets we had to do a lot of data cleaning:
 First of all the music data: as the API could not give us music genres of each song we had to use the tags through track.getInfo. These tags could be many different things, for example the artist or song name, the year it was published or other things that are associated with the song. To find genres in these tags we first cleaned them so that all of the data has the same structures (e.g. no capital letters or special signs like "-"). Then we used the other list with the cleaned genres to compare each tag of a song. The genres would then be added up per country. 
 The HDI and depression rates datasets also had to be cleaned before usage. The depression rates dataset gives values for the last 15 years of each country so we only used the most recent value as it is most accurate.
 
+## from here write steps following the code to show how it works
 
 
-
+## AUTHORS
+This application has been developed as final project for the subject "Cloud y Big Data" by five Erasmus students at the Universidad Complutense de Madrid:
+- Tomislav Kravaršćan
+- Simon Markmann
+- Valerio Moroni
+- Ena Rajković
+- Yurii Shcheholiev
 
