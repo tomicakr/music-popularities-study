@@ -25,7 +25,7 @@ def tagsExtractor(track):
     
     if response.content is None or response.content == '':
         return ['---']
-    response = json.loads(response.content)
+    response = json.loads(response.content.decode("utf-8"))
     if 'track' in response.keys():
         topTagsAndLinks = response['track']['toptags']['tag']
         tags = []

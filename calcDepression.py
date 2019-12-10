@@ -6,9 +6,6 @@ import json
 
 sc = SparkContext()
 sc.setLogLevel('ERROR')
-logger = sc._jvm.org.apache.log4j
-logger.LogManager.getLogger("org"). setLevel( logger.Level.ERROR )
-logger.LogManager.getLogger("akka").setLevel( logger.Level.ERROR )
 
 country_depression_groups = createGroups(sc.textFile('./depression.csv').filter(lambda line: re.split(',', line)[2] == "2017").filter(lambda line: re.split(',', line)[1] != "").map(lambda line: (re.split(',', line)[0], float(re.split(',', line)[3]))))
 
@@ -40,7 +37,7 @@ for group in country_depression_groups:
             print("   page {}/11".format(i))
             response = getSongs(country, 50, i)
             i += 1
-            response = json.loads(response.content)
+            response = json.loads(response.content.decode("utf-8"))
             if response == b'' or i == 11:
                 break
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:

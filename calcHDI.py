@@ -3,16 +3,17 @@ from pyspark import SparkContext
 from trackGrouping import tagsExtractor, getSongs, createGroups, printGroupsRanges, getGroupsRanges
 import re
 import json
+import time
 
 sc = SparkContext()
 country_hdi_groups = createGroups(sc.textFile('./hdis.csv').filter(lambda line: re.split(',', line)[-1].replace('"', '').replace('.','').isdigit()).map(lambda line: (re.split(',', line)[1].replace('"', '').lower(), float(re.split(',', line)[-1].replace('"', '')))))
 
-groupRanges = getGroupsRanges(country_depression_groups)
+groupRanges = getGroupsRanges(country_hdi_groups)
 
 genres_dict = dict()
 genres_clean = sc.textFile('genres_clean.txt')
 
-numberOfGroups = len(country_depression_groups)
+numberOfGroups = len(country_hdi_groups)
 
 def cleanup(tag_number):
     tag, number = tag_number
@@ -22,6 +23,7 @@ def cleanup(tag_number):
 g = 1
 
 for group in country_hdi_groups:
+    startGroup = time.time()
     groupOut = open("group_{}".format(g), "w")
     for line in genres_clean.collect():
         genres_dict[line] = 0
@@ -30,13 +32,14 @@ for group in country_hdi_groups:
     
     hdiGroupsTags = []
     for country, hdi in group:
+        startCountry = time.time()
         i = 1
         print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
         while True:
             print("   page {}/11".format(i))
             response = getSongs(country, 50, i)
             i += 1
-            response = json.loads(response.content)
+            response = json.loads(response.content.decode("utf-8"))
             if response == b'' or i == 11:
                 break
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
@@ -46,7 +49,9 @@ for group in country_hdi_groups:
                 hdiGroupsTags.extend(list(countryTags.collect()))
         c += 1
         print("")
+        endCountry = time.time()
     g += 1
+    print("time elapsed for country = {}", endCountry - startCountry)
     print("\n\n")
 
     hdiGroupsTags = sc.parallelize(hdiGroupsTags).reduceByKey(lambda x, y: x + y)
@@ -64,4 +69,7 @@ for group in country_hdi_groups:
             groupOut.write("{}:{}\n".format(key, genres_dict[key]))
     
     print("\n")
+    endGroup = time.time()
+
+    print("time elapsed for group = {}", endGroup - startGroup)
 
