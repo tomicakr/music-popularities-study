@@ -41,6 +41,8 @@ for group in country_hdi_groups:
             print("   page {}/11".format(i))
             response = getSongs(country, 50, i)
             i += 1
+            if response.status_code == 29:
+                print("!!!!!!!!!!!!!!!!!!!error: rate limit exceeded")
             # if response.error != '':
             #     print("        error:   {}".format(response.error))
             response = json.loads(response.content.decode("utf-8"))
@@ -76,4 +78,3 @@ for group in country_hdi_groups:
     endGroup = time.time()
 
     print("time elapsed for group = {}".format(endGroup - startGroup))
-
