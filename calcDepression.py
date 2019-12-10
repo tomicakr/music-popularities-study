@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from pyspark import SparkContext
-from trackGrouping import tagsExtractor, getSongs, createGroups, printGroupsRanges
+from trackGrouping import tagsExtractor, getSongs, createGroups, printGroupsRanges, getGroupsRanges
 import re
 import json
 
