@@ -52,8 +52,8 @@ for group in country_hdi_groups:
         c += 1
         print("")
         endCountry = time.time()
+        print("time elapsed for country = {}", endCountry - startCountry)
     g += 1
-    print("time elapsed for country = {}", endCountry - startCountry)
     print("\n\n")
 
     hdiGroupsTags = sc.parallelize(hdiGroupsTags).reduceByKey(lambda x, y: x + y)
