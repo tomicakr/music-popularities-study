@@ -42,6 +42,8 @@ for group in country_hdi_groups:
             response = getSongs(country, 50, i)
             i += 1
             response = json.loads(response.content.decode("utf-8"))
+            if response.error != '':
+                print("        error:   {}".format(response.error))
             if response == b'' or i == 11:
                 break
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
@@ -50,9 +52,9 @@ for group in country_hdi_groups:
                 countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
                 hdiGroupsTags.extend(list(countryTags.collect()))
         c += 1
-        print("")
         endCountry = time.time()
-        print("time elapsed for country = {}", endCountry - startCountry)
+        print("time elapsed for country = {}".format(endCountry - startCountry))
+        print("")
     g += 1
     print("\n\n")
 
@@ -73,5 +75,5 @@ for group in country_hdi_groups:
     print("\n")
     endGroup = time.time()
 
-    print("time elapsed for group = {}", endGroup - startGroup)
+    print("time elapsed for group = {}".format(endGroup - startGroup))
 

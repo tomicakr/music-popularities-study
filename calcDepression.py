@@ -3,6 +3,7 @@ from pyspark import SparkContext
 from trackGrouping import tagsExtractor, getSongs, createGroups, printGroupsRanges, getGroupsRanges
 import re
 import json
+import time
 
 sc = SparkContext()
 sc.setLogLevel('ERROR')
@@ -23,6 +24,7 @@ def cleanup(tag_number):
 
 g = 1
 for group in country_depression_groups:
+    startGroup = time.time()
     groupOut = open("group_{}".format(g), "w")
     for line in genres_clean.collect():
         genres_dict[line] = 0
@@ -31,6 +33,7 @@ for group in country_depression_groups:
 
     depressionGroupsTags = []
     for country, deprRate in group:
+        startCountry = time.time()
         i = 1
         print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
         while True:
@@ -45,7 +48,9 @@ for group in country_depression_groups:
                 countryTags = sparkCountryTracks.map(tagsExtractor)
                 countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
                 depressionGroupsTags.extend(list(countryTags.collect()))
+        endCountry = time.time()
         c += 1
+        print("time elapsed for country = {}".format(endCountry - startCountry))
         print("")
     g += 1
     print("\n\n")
@@ -65,3 +70,6 @@ for group in country_depression_groups:
             groupOut.write("{}:{}\n".format(key, genres_dict[key]))
     
     print("\n")
+    endGroup = time.time()
+
+    print("time elapsed for group = {}".format(endGroup - startGroup))
