@@ -44,7 +44,7 @@ for group in country_hdi_groups:
             # if response.error != '':
             #     print("        error:   {}".format(response.error))
             response = json.loads(response.content.decode("utf-8"))
-            if response == b'' or i == 3:
+            if response == b'' or i == 11:
                 break
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
