@@ -56,3 +56,12 @@ def printGroupsRanges(country_groups):
         begin_range = group[0][1]
         end_range = group[-1][1]
         print("{} - {} : {}".format(begin_range, end_range, end_range-begin_range))
+
+def getGroupsRanges(country_groups):
+    number_of_groups = len(country_groups)
+    ranges = []
+    for i in range (0, number_of_groups):
+        group = country_groups[i]
+        begin_range = group[0][1]
+        end_range = group[-1][1]
+        ranges.append((begin_range, end_range))

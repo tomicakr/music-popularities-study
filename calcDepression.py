@@ -12,7 +12,7 @@ logger.LogManager.getLogger("akka").setLevel( logger.Level.ERROR )
 
 country_depression_groups = createGroups(sc.textFile('./depression.csv').filter(lambda line: re.split(',', line)[2] == "2017").filter(lambda line: re.split(',', line)[1] != "").map(lambda line: (re.split(',', line)[0], float(re.split(',', line)[3]))))
 
-#printGroupsRanges(country_depression_groups)
+groupRanges = getGroupsRanges(country_depression_groups)
 
 genres_dict = dict()
 genres_clean = sc.textFile('genres_clean.txt')
@@ -26,6 +26,7 @@ def cleanup(tag_number):
 
 g = 1
 for group in country_depression_groups:
+    groupOut = open("group_{}".format(g), "w")
     for line in genres_clean.collect():
         genres_dict[line] = 0
     c = 1
@@ -60,7 +61,10 @@ for group in country_depression_groups:
         if tag in genres_dict.keys():
             genres_dict[tag] = number
 
+    range = groupRanges[g - 1]
+    groupOut.write("{}-{}\n".format(range[0], range[1]))
     for key in genres_dict.keys():
         if genres_dict[key] != 0:
-            print("         {}: {}".format(key, genres_dict[key]))
+            groupOut.write("{}:{}\n".format(key, genres_dict[key]))
+    
     print("\n")
