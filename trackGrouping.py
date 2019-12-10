@@ -65,3 +65,5 @@ def getGroupsRanges(country_groups):
         begin_range = group[0][1]
         end_range = group[-1][1]
         ranges.append((begin_range, end_range))
+
+    return ranges
