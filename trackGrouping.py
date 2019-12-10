@@ -26,7 +26,9 @@ def tagsExtractor(track):
 
     if response.content is None or response.content == '':
         return ['---']
-    print(response.json())
+    
+    if not response.ok:
+        print(response.json())
 
     response = json.loads(response.content.decode("utf-8"))
     if 'track' in response.keys():
