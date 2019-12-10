@@ -23,8 +23,11 @@ def tagsExtractor(track):
         trackName = track['name']
         response = getSongInfoArtistAndName(artist, trackName)
     
+
     if response.content is None or response.content == '':
+        print(response.json())
         return ['---']
+
     response = json.loads(response.content.decode("utf-8"))
     if 'track' in response.keys():
         topTagsAndLinks = response['track']['toptags']['tag']
