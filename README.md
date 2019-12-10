@@ -13,8 +13,19 @@ We downloaded the depression rates data from [here](https://ourworldindata.org/m
 Another dataset that was used is a list with almost 900 of the most famous music genres.
 
 
+## WHY THE NEED FOR BIG DATA?
+Our project has to work with a huge amount of data and a simple application wouldn't have been suitable for many reasons.
+First of all, the music data: we had so many tracks, genres (around 900), artists for each country (around 194) and, moreover, we needed to process it in order to get usable results to be compared with other data taken from a totally different field, the HDI index and the depression rate (each one of these for each nation in the world). It sounds pretty clear that we couldn't have developed an application like this using simple coding or loops, since the response time would have been whopping.
+To solve this problem, we used two services: the Amazon Web Servers, which provided us a cluster on which we runned the code, and Apache Spark, a unified analytics engine for large-scale data processing.
+
+
 ## HOW DOES IT WORK?
-The project is based on the map-reduce mode, using as programming language Python. We developed many phases to reach the final result. 
+The project is based on the map-reduce model, using as programming language Python. We developed many phases to reach the final result. 
 In order to work with the datasets we had to do a lot of data cleaning:
-First of all the music data: as the api could not give us music genres of each song we had to use the tags via track.getInfo. These tags could be many different things, for example the artist or song name, the year it was published or other things that are associated with the song. To find genres in these tags we first cleaned them so that all of the data has the same structures (e.g. no capital letters or special signs like "-"). Then we used the other list with the cleaned genres to compare each tag of a song. The genres would then be added up per country. 
+First of all the music data: as the API could not give us music genres of each song we had to use the tags through track.getInfo. These tags could be many different things, for example the artist or song name, the year it was published or other things that are associated with the song. To find genres in these tags we first cleaned them so that all of the data has the same structures (e.g. no capital letters or special signs like "-"). Then we used the other list with the cleaned genres to compare each tag of a song. The genres would then be added up per country. 
 The HDI and depression rates datasets also had to be cleaned before usage. The depression rates dataset gives values for the last 15 years of each country so we only used the most recent value as it is most accurate.
+
+
+
+
+
