@@ -52,7 +52,7 @@ def tagsExtractor(track):
 def createGroups(country_attribute):
     country_attribute = country_attribute.sortBy(lambda x: x[1]).collect()
     number_of_groups = 15
-    number_of_countries = int(len(country_attribute)/number_of_groups)
+    number_of_countries = int(math.ceil(len(country_attribute)/number_of_groups))
     country_attribute_groups = []
     for i in range(0,number_of_groups):
         if i==number_of_groups-1:

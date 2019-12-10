@@ -55,7 +55,6 @@ for group in country_hdi_groups:
         endCountry = time.time()
         print("time elapsed for country = {}".format(endCountry - startCountry))
         print("")
-    g += 1
     print("\n\n")
 
     hdiGroupsTags = sc.parallelize(hdiGroupsTags).reduceByKey(lambda x, y: x + y)
@@ -72,7 +71,8 @@ for group in country_hdi_groups:
         if genres_dict[key] != 0:
             groupOut.write("{}:{}\n".format(key, genres_dict[key]))
     
+    print("time elapsed for group = {}".format(endGroup - startGroup))
     print("\n")
     endGroup = time.time()
 
-    print("time elapsed for group = {}".format(endGroup - startGroup))
+    g += 1
