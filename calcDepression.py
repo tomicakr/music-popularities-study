@@ -8,14 +8,14 @@ import time
 sc = SparkContext()
 sc.setLogLevel('ERROR')
 
-country_hdi_groups = createGroups(sc.textFile('./hdis.csv').filter(lambda line: re.split(',', line)[-1].replace('"', '').replace('.','').isdigit()).map(lambda line: (re.split(',', line)[1].replace('"', '').lower(), float(re.split(',', line)[-1].replace('"', '')))))
+country_depression_groups = createGroups(sc.textFile('./depression.csv').filter(lambda line: re.split(',', line)[2] == "2017").filter(lambda line: re.split(',', line)[1] != "").map(lambda line: (re.split(',', line)[0], float(re.split(',', line)[3]))))
 
-groupRanges = getGroupsRanges(country_hdi_groups)
+groupRanges = getGroupsRanges(country_depression_groups)
 
 genres_dict = dict()
-genres_clean = sc.textFile('../genres_clean.txt')
+genres_clean = sc.textFile('genres_clean.txt')
 
-numberOfGroups = len(country_hdi_groups)
+numberOfGroups = len(country_depression_groups)
 
 def cleanup(tag_number):
     tag, number = tag_number
@@ -23,17 +23,16 @@ def cleanup(tag_number):
     return newTag, number
 
 g = 1
-
-for group in country_hdi_groups:
+for group in country_depression_groups:
     startGroup = time.time()
-    groupOut = open("group_{}".format(g), "w")
+    groupOut = open("depression/group_{}".format(g), "w")
     for line in genres_clean.collect():
         genres_dict[line] = 0
     c = 1
     numberOfCountriesInGroup = len(group)
-    
-    hdiGroupsTags = []
-    for country, hdi in group:
+
+    depressionGroupsTags = []
+    for country, deprRate in group:
         startCountry = time.time()
         i = 1
         print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
@@ -50,22 +49,22 @@ for group in country_hdi_groups:
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
                 countryTags = sparkCountryTracks.map(tagsExtractor)
                 countryTags = countryTags.flatMap(lambda x: x).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
-                hdiGroupsTags.extend(list(countryTags.collect()))
-        c += 1
+                depressionGroupsTags.extend(list(countryTags.collect()))
         endCountry = time.time()
+        c += 1
         print("time elapsed for country = {}".format(endCountry - startCountry))
         print("")
     g += 1
     print("\n\n")
 
-    hdiGroupsTags = sc.parallelize(hdiGroupsTags).reduceByKey(lambda x, y: x + y)
-    hdiGroupsTags = hdiGroupsTags.map(cleanup)
+    depressionGroupsTags = sc.parallelize(depressionGroupsTags).reduceByKey(lambda x, y: x + y)
+    depressionGroupsTags = depressionGroupsTags.map(cleanup)
 
-    for gt in hdiGroupsTags.collect(): 
+    for gt in depressionGroupsTags.collect(): 
         tag, number = gt
         if tag in genres_dict.keys():
             genres_dict[tag] = number
-            
+
     range = groupRanges[g - 1]
     groupOut.write("{}-{}\n".format(range[0], range[1]))
     for key in genres_dict.keys():
