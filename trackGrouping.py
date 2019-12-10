@@ -32,7 +32,12 @@ def tagsExtractor(track):
     if not response.ok:
         print(response.json())
 
-    response = json.loads(response.content.decode("utf-8"))
+    try:
+        response = json.loads(response.content.decode("utf-8"))
+    except:
+        print(response.content)
+        return ['---']
+    
     if 'track' in response.keys():
         topTagsAndLinks = response['track']['toptags']['tag']
         tags = []
