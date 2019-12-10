@@ -8,7 +8,7 @@ import time
 sc = SparkContext()
 sc.setLogLevel('ERROR')
 
-country_hdi_groups = createGroups(sc.textFile('./hdis.csv').filter(lambda line: re.split(',', line)[-1].replace('"', '').replace('.','').isdigit()).map(lambda line: (re.split(',', line)[1].replace('"', '').lower(), float(re.split(',', line)[-1].replace('"', '')))))
+country_hdi_groups = createGroups(sc.textFile('./hdi/hdis.csv').filter(lambda line: re.split(',', line)[-1].replace('"', '').replace('.','').isdigit()).map(lambda line: (re.split(',', line)[1].replace('"', '').lower(), float(re.split(',', line)[-1].replace('"', '')))))
 
 groupRanges = getGroupsRanges(country_hdi_groups)
 

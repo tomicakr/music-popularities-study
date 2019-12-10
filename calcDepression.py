@@ -8,7 +8,7 @@ import time
 sc = SparkContext()
 sc.setLogLevel('ERROR')
 
-country_depression_groups = createGroups(sc.textFile('./depression.csv').filter(lambda line: re.split(',', line)[2] == "2017").filter(lambda line: re.split(',', line)[1] != "").map(lambda line: (re.split(',', line)[0], float(re.split(',', line)[3]))))
+country_depression_groups = createGroups(sc.textFile('./depression/depression.csv').filter(lambda line: re.split(',', line)[2] == "2017").filter(lambda line: re.split(',', line)[1] != "").map(lambda line: (re.split(',', line)[0], float(re.split(',', line)[3]))))
 
 groupRanges = getGroupsRanges(country_depression_groups)
 
