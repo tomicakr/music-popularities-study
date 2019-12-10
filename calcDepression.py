@@ -33,15 +33,15 @@ for group in country_depression_groups:
     numberOfCountriesInGroup = len(group)
 
     depressionGroupsTags = []
-    for country, hdi in group:
+    for country, deprRate in group:
         i = 1
         print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
         while True:
-            print("   page {}/5".format(i))
+            print("   page {}/11".format(i))
             response = getSongs(country, 50, i)
             i += 1
             response = json.loads(response.content)
-            if response == b'' or i == 6:
+            if response == b'' or i == 11:
                 break
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
                 sparkCountryTracks = sc.parallelize(response['tracks']['track'])
