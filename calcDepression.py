@@ -37,7 +37,7 @@ for group in country_depression_groups:
         i = 1
         print("country {}/{} in group {}/{}".format(c, numberOfCountriesInGroup, g, numberOfGroups))
         while True:
-            print("   page {}/11".format(i))
+            print("   page {}/10".format(i))
             response = getSongs(country, 50, i)
             i += 1
             # if response.error != '':
