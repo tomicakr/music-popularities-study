@@ -41,8 +41,8 @@ for group in country_hdi_groups:
             print("   page {}/11".format(i))
             response = getSongs(country, 50, i)
             i += 1
-            if response.error != '':
-                print("        error:   {}".format(response.error))
+            # if response.error != '':
+            #     print("        error:   {}".format(response.error))
             response = json.loads(response.content.decode("utf-8"))
             if response.error != '':
                 print("        error:   {}".format(response.error))
