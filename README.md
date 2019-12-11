@@ -32,7 +32,69 @@ In order to work with the datasets we had to do a lot of data cleaning:
 First of all the music data: as the API could not give us music genres of each song we had to use the tags through track.getInfo. These tags could be many different things, for example the artist or song name, the year it was published or other things that are associated with the song. To find genres in these tags we first cleaned them so that all of the data has the same structures (e.g. no capital letters or special signs like "-"). Then we used the other list with the cleaned genres to compare each tag of a song. The genres would then be added up per country. 
 The HDI and depression rates datasets also had to be cleaned before usage. The depression rates dataset gives values for the last 15 years of each country so we only used the most recent value as it is most accurate.
 
-## from here write steps following the code to show how it works
+## WORKFLOW
+Now we're going to explain how we moved through the code and the guideline followed:
+- Extract tags from last.fm API per country:
+              
+              _def getSongInfo(mbid):_
+                _return requests.get("http://ws.audioscrobbler.com/[...]_
+                
+                
+               _def tagsExtractor(track):_
+                  _mbid = track['mbid'].replace('"', '')_
+                 _..._
+                  _if 'track' in response.keys():_
+                         _topTagsAndLinks = response['track']['toptags']['tag']_
+                         _tags = []_
+                         _for tagsAndLinks in topTagsAndLinks:_
+                            _tags.append(tagsAndLinks['name'])_
+                            _..._
+                  _return tags_
+                  
+              
+              _def createGroups(country_attribute):_
+                   _country_attribute = country_attribute.sortBy(lambda x: x[1]).collect()_
+                   _number_of_groups = 15_
+                   _number_of_countries = int(len(country_attribute)/number_of_groups)_
+                   _country_attribute_groups = []_
+                   _..._ 
+
+                   _return country_attribute_groups_
+                   
+                   
+ - Cleanup data and filter tags:
+ 
+             _def cleanup(tag_number):_
+                   _tag, number = tag_number_
+                   _newTag = tag.replace("-", " ").lower()_
+                   _return newTag, number_
+                   
+                   
+              _genres_clean = sc.textFile('genres_clean.txt')_
+
+              _for line in genres_clean.collect():_
+              _genres_dict[line] = 0_
+              _..._
+
+              _for gt in depressionGroupsTags.collect():_
+
+              _tag, number = gt_
+              _if tag in genres_dict.keys():_
+                   _genres_dict[tag] = number_
+                   
+                   
+- Count the genres per group of countries:
+
+             _for key in genres_dict.keys():_
+             _if genres_dict[key] != 0:
+                 groupOut.write("{}:{}\n".format(key, genres_dict[key]))_
+                 
+                 
+## CONCLUSIONS                  
+
+
+
+
 
 
 ## AUTHORS
