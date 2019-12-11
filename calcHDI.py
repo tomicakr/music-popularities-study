@@ -71,8 +71,8 @@ for group in country_hdi_groups:
         if genres_dict[key] != 0:
             groupOut.write("{}:{}\n".format(key, genres_dict[key]))
     
+    endGroup = time.time()
     print("time elapsed for group = {}".format(endGroup - startGroup))
     print("\n")
-    endGroup = time.time()
 
     g += 1
