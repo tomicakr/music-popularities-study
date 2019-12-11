@@ -4,7 +4,7 @@ import math
 import requests
 import json
 
-api_key = "101c6972f8adf89c5f3bdf67ff0efa0c"
+api_key = "f15e8c8ea5e04aa8c52151a8baf84334"
 
 def getSongInfo(mbid):
     return requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key={}&mbid={}&format=json".format(api_key, mbid))
@@ -21,8 +21,8 @@ def tagsExtractor(track):
     if mbid != '':
         response = getSongInfo(mbid)
     else:
-        artist = track['artist']['name']
-        trackName = track['name']
+        artist = track['artist']['name'].encode("utf-8")
+        trackName = track['name'].encode("utf-8")
         response = getSongInfoArtistAndName(artist, trackName)
     
 
