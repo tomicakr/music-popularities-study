@@ -40,9 +40,10 @@ for group in country_depression_groups:
             print("   page {}/10".format(i))
             response = getSongs(country, 50, i)
             i += 1
-            # if response.error != '':
-            #     print("        error:   {}".format(response.error))
-            response = json.loads(response.content.decode("utf-8"))
+            try:
+                response = json.loads(response.content.decode("utf-8"))
+            except:
+                print(response)
             if response == b'' or i == 11:
                 break
             if 'tracks' in response.keys() and response['tracks']['track'] is not None:
@@ -54,7 +55,6 @@ for group in country_depression_groups:
         c += 1
         print("time elapsed for country = {}".format(endCountry - startCountry))
         print("")
-    g += 1
     print("\n\n")
 
     depressionGroupsTags = sc.parallelize(depressionGroupsTags).reduceByKey(lambda x, y: x + y)
@@ -71,7 +71,8 @@ for group in country_depression_groups:
         if genres_dict[key] != 0:
             groupOut.write("{}:{}\n".format(key, genres_dict[key]))
     
-    print("\n")
     endGroup = time.time()
-
     print("time elapsed for group = {}".format(endGroup - startGroup))
+    print("\n")
+
+    g += 1
