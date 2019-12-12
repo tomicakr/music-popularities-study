@@ -87,7 +87,7 @@
 									<blockquote>??? </blockquote> -->
 									<h4>Extract tags from last.fm API per country:</h4>
 									<pre><code>
-			def getSongInfo(mbid):
+def getSongInfo(mbid):
     return requests.get("http://ws.audioscrobbler.com/[...]_
                 
                 
@@ -116,7 +116,7 @@ def createGroups(country_attribute):
 									<blockquote>??? </blockquote> -->
 									<h4>Cleanup data and filter tags:</h4>
 									<pre><code>
-			def cleanup(tag_number):
+def cleanup(tag_number):
     tag, number = tag_number
     newTag = tag.replace("-", " ").lower()
     return newTag, number
@@ -124,20 +124,20 @@ def createGroups(country_attribute):
     genres_clean = sc.textFile('genres_clean.txt')
 
     for line in genres_clean.collect():
-    genres_dict[line] = 0
+    	genres_dict[line] = 0
     ...
 
     for gt in depressionGroupsTags.collect():
 
-    tag, number = gt
-    if tag in genres_dict.keys():
-       genres_dict[tag] = number</code></pre>
+    	tag, number = gt
+   	if tag in genres_dict.keys():
+       		genres_dict[tag] = number</code></pre>
 
 <!-- 									<h4>???</h4>
 									<blockquote>??? </blockquote> -->
 									<h4>Count the genres per group of countries:</h4>
 									<pre><code>
-			for key in genres_dict.keys():
+for key in genres_dict.keys():
        if genres_dict[key] != 0:
           groupOut.write("{}:{}\n".format(key, genres_dict[key]))
 					
