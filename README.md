@@ -36,7 +36,7 @@ The HDI and depression rates datasets also had to be cleaned before usage. The d
 Now we're going to explain how we moved through the code and the guideline followed:
 - Extract tags from last.fm API per country:
               
-def getSongInfo(mbid):
+```def getSongInfo(mbid):
     return requests.get("http://ws.audioscrobbler.com/[...]_
                 
                 
@@ -61,15 +61,14 @@ def createGroups(country_attribute):
 
     return country_attribute_groups
                    
-                   
+  ```               
  - Cleanup data and filter tags:
- 
- def cleanup(tag_number):
+ ```
+  def cleanup(tag_number):
      tag, number = tag_number
      newTag = tag.replace("-", " ").lower()
      return newTag, number
-                   
-                   
+                             
      genres_clean = sc.textFile('genres_clean.txt')
 
      for line in genres_clean.collect():
@@ -82,13 +81,13 @@ def createGroups(country_attribute):
      if tag in genres_dict.keys():
         genres_dict[tag] = number
                    
-                   
+```                   
 - Count the genres per group of countries:
-
+```
    for key in genres_dict.keys():
        if genres_dict[key] != 0:
           groupOut.write("{}:{}\n".format(key, genres_dict[key]))
- 
+```
 
 ## USAGE OF THE APPLICATION
 In order to use the application properly, here we show you many guidelines:
