@@ -93,6 +93,18 @@ Now we're going to explain how we moved through the code and the guideline follo
 ## USAGE OF THE APPLICATION
 In order to use the application properly, here we show you many guidelines:
 
+**Installing python-pip:**
+    _sudo apt install python-pip_
+
+**Installing requests:**
+    _pip install requests_
+
+**Installing numpy:**
+    _pip install numpy_
+
+**Installing matplotlib:**
+    _pip install matplotlib_
+
 **Starting the depression rate calculations**:
     _spark-submit ./calcDepression.py_
 
