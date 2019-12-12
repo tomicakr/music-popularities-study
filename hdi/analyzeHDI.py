@@ -2,7 +2,6 @@ import sys
 import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
-import operator
 
 n = int(sys.argv[1])
 genresDict = {}

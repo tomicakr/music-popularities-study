@@ -1,3 +1,15 @@
+Installing python-pip:
+    sudo apt install python-pip
+
+Installing requests:
+    pip install requests
+
+Installing numpy:
+    pip install numpy
+
+Installing matplotlib:
+    pip install matplotlib
+
 Starting the depression rate calculations:
     spark-submit ./calcDepression.py
 
