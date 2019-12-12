@@ -8,8 +8,11 @@ n = int(sys.argv[1])
 genresDict = {}
 groupFactor = 0
 rangesTotal = []
+
+allBigGroupRanges = []
 for i in range(1, n+1, 3):
     bigGroupDict = {}
+    bigGroupRanges = [0,0]
     totalTagsCount = 0
     for j in range(0, 3):
         fileName = "group_{}".format(i+j)
@@ -20,9 +23,16 @@ for i in range(1, n+1, 3):
         tags = []
         for line in groupFile:
             if firstLine:
+                print("Sad sam na file-u {}".format(i+j))
                 ranges = line.split('-')
                 rangesTotal.append(ranges)
                 firstLine = False
+                if j==0:
+                    print("0000000000000000000")
+                    bigGroupRanges[0] = ranges[0]
+                elif j==2:
+                    print("2222222222222222222")
+                    bigGroupRanges[1] = ranges[1]
                 continue
 
             tag, count = line.split(':')
@@ -32,7 +42,8 @@ for i in range(1, n+1, 3):
                 bigGroupDict[tag] = bigGroupDict[tag] + count
             else:
                 bigGroupDict[tag] = count
-        
+    allBigGroupRanges.append(bigGroupRanges)
+
     bigGroupDictPercetage = {}
     for key in bigGroupDict.keys():
         bigGroupDictPercetage[key] = float(bigGroupDict[key])*100/totalTagsCount
@@ -87,7 +98,7 @@ genres = genresDict.keys()
 labels = genres
 
 x = np.arange(len(labels))  # the label locations
-width = 0.3  # the width of the bars
+width = 0.7  # the width of the bars
 
 fig, ax = plt.subplots()
 
@@ -101,7 +112,7 @@ for i in range(1,6):
         a+=1
 
     print(groupDictPerGenre[i-1])
-    rects1 = ax.bar(x + (i-2.5)*(width/5), groupDictPerGenre[i-1], width, label=i)
+    rects1 = ax.bar(x + (i-3)*(width/5), groupDictPerGenre[i-1], width/5, label="Group {}: range {}-{}".format(i, round(float(allBigGroupRanges[i-1][0]),3), round(float(allBigGroupRanges[i-1][1]),3)))
 
 # for key in genresDict.keys():
 #     a = 0
