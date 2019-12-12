@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Solid State by HTML5 UP</title>
+		<title>Implementation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Solid State</a></h1>
+						<h1><a href="index.html">Music dependencies analysis</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -31,10 +31,10 @@
 							<h2>Menu</h2>
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
+								<li><a href="generic.html">Implementation</a></li>
+								<li><a href="elements.html">Set up tutorial</a></li>
+<!-- 								<li><a href="#">Log In</a></li>
+								<li><a href="#">Sign Up</a></li> -->
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -44,8 +44,8 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<h2>Generic</h2>
-								<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+								<h2>Implementation</h2>
+								<p>Project grounding and some internal coding examples</p>
 							</div>
 						</header>
 
@@ -53,15 +53,13 @@
 							<div class="wrapper">
 								<div class="inner">
 
-									<h3 class="major">Lorem ipsum dolor</h3>
-									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+									<h3 class="major">WHY THE NEED FOR BIG DATA?</h3>
+									<p>Our project has to work with a huge amount of data and a simple application wouldn't have been suitable for many reasons. First of all, the music data: we had so many tracks, genres (around 900), artists for each country (around 194) and, moreover, we needed to process it in order to get usable results to be compared with other data taken from a totally different field, the HDI index and the depression rate (each one of these for each nation in the world). It sounds pretty clear that we couldn't have developed an application like this using simple coding or loops, since the response time would have been whopping. To solve this problem, we used two services: the Amazon Web Servers, which provided us a cluster on which we runned the code, and Apache Spark, a unified analytics engine for large-scale data processing.</p>
 
-									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
-
-									<h3 class="major">Vitae phasellus</h3>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
-									<section class="features">
+									<h3 class="major">HOW DOES IT WORK?</h3>
+									<p>The project is based on the map-reduce model, using as programming language Python. We developed many phases to reach the final result. In order to work with the datasets we had to do a lot of data cleaning: First of all the music data: as the API could not give us music genres of each song we had to use the tags through track.getInfo. These tags could be many different things, for example the artist or song name, the year it was published or other things that are associated with the song. To find genres in these tags we first cleaned them so that all of the data has the same structures (e.g. no capital letters or special signs like "-"). Then we used the other list with the cleaned genres to compare each tag of a song. The genres would then be added up per country. The HDI and depression rates datasets also had to be cleaned before usage. The depression rates dataset gives values for the last 15 years of each country so we only used the most recent value as it is most accurate.</p>
+										
+<!-- 									<section class="features">
 										<article>
 											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
 											<h3 class="major">Sed feugiat lorem</h3>
@@ -74,7 +72,7 @@
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
 											<a href="#" class="special">Learn more</a>
 										</article>
-									</section>
+									</section> -->
 
 								</div>
 							</div>
@@ -83,7 +81,7 @@
 
 				<!-- Footer -->
 					<section id="footer">
-						<div class="inner">
+<!-- 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
 							<form method="post" action="#">
@@ -120,7 +118,7 @@
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
-						</div>
+						</div> -->
 					</section>
 
 			</div>
