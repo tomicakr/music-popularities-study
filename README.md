@@ -88,10 +88,29 @@ Now we're going to explain how we moved through the code and the guideline follo
              _for key in genres_dict.keys():_
              _if genres_dict[key] != 0:
                  groupOut.write("{}:{}\n".format(key, genres_dict[key]))_
-                 
+ 
+
+## USAGE OF THE APPLICATION
+In order to use the application properly, here we show you many guidelines:
+
+**Starting the depression rate calculations**:
+    _spark-submit ./calcDepression.py_
+
+**Starting the hdi calculations**:
+    _spark-submit ./calcHDI.py_
+
+**Displaying the depression graph**:
+    _python ./depression/analyzeDepression.py 15_
+
+**Displaying the hdi graph**:
+    _python ./hdi/analyzeHDI.py 15_
+
+The lastFM API key is already hardcoded in the _trackGrouping.py_ file, the one  which is found inside can be used.
+The groups will appear in the corresponding folders, but they are also already pushed in the repository.
+ 
+ 
                  
 ## CONCLUSIONS                  
-
 
 
 
