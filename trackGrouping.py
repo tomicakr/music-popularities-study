@@ -5,15 +5,16 @@ import requests
 import json
 
 api_key = "f15e8c8ea5e04aa8c52151a8baf84334"
+api_base = "http://ws.audioscrobbler.com/2.0/"
 
 def getSongInfo(mbid):
-    return requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key={}&mbid={}&format=json".format(api_key, mbid))
+    return requests.get("{}?method=track.getInfo&api_key={}&mbid={}&format=json".format(api_base, api_key, mbid))
 
 def getSongInfoArtistAndName(artist, trackName):
-    return requests.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key={}&artist={}&track={}&format=json".format(api_key, artist, trackName))
+    return requests.get("{}?method=track.getInfo&api_key={}&artist={}&track={}&format=json".format(api_base, api_key, artist, trackName))
 
 def getSongs(country, limit, page):
-    return requests.get("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country={}&api_key={}&format=json&limit={}&page={}".format(country, api_key, limit, page))
+    return requests.get("{}?method=geo.gettoptracks&country={}&api_key={}&format=json&limit={}&page={}".format(api_base, country, api_key, limit, page))
 
 def tagsExtractor(track):
     mbid = track['mbid'].replace('"', '')
