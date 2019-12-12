@@ -122,8 +122,10 @@ The groups will appear in the corresponding folders, but they are also already p
  
                  
 ## CONCLUSIONS                  
-
-
+Seeing our results, we can say that music genres aren't strictly correlated with HDI and depression rates, cause the world's tastes are more or less the same worldwide, fact which also justifies the global popularity of many artists, leaders of the genre they represent.
+An higher correlation can be seen on many minor genres: in average, countries with an high HDI are more likely to hear new genres as we can see in the graph (for example with "funk") and countries with the lowest HDI are more likely to listen to "street" and "urban" genres, like rap.
+The depression rate doesn't affect that much our studies because, as already said, the most famous genres are the same everywhere. The only thing we can conclude from it is that countries more incline to be depressed listen to many subgeneres that countries less depressed don't. 
+Basing ourselves on these facts, to conclude, we can say that life expectancy, education, per capita income indicators and depression rates don't indicate accurately what people listen to, but they can point out how every country explores musical genres beyond the most famous ones.
 
 
 
