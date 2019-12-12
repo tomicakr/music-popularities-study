@@ -1,149 +1,189 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Cloud computing project:"music populaity analysis"</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<title>Cloud computing project:"music populaity analysis"</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Music dependencies analysis</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+<body class="is-preload">
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Implementation</a></li>
-								<li><a href="results.html">Results</a></li>
-								<li><a href="elements.html">Set up tutorial</a></li>								
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<!-- CHANGE IF HAVE TIME-->
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>Music dependencies analysis</h2>
-							<p>Compare HDI and depression rates in countries to the genre popularity of music tracks</a></p>
-						</div>
-					</section>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">Music dependencies analysis</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/project_pic.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">ABOUT THE PROJECT</h2>
-										<p>Our application studies how Human Development Index (HDI) and depression rates affect music preferences all around the world.</p>
-										<p>The HDI is a statistic composite index of life expectancy, education, and per capita income indicators, which are used to rank countries into four tiers of human development. A country scores a higher HDI (between 0 and 1) when the lifespan is higher, the education level is higher, and the gross national income GNI per capita is higher. Moreover, we tried to associate this index with the depression rates of each country in order to understand if these two affect the music genre popularity.</p>
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/target-goals.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">TARGETS</h2>
-										<p>With our project we wanted to show information that could be useful for people interested in the argument, since it is for research purposes only. Our main aim was to see if music genre popularities are affected by the "human growth level" and the depression rate in each country. In simple terms, if we have a country with a low level of HDI and a high depression rate, we wanted to check if the most popular genres tare the one considered more "sad" or "emotional". At the same time, a country which has got a high score of HDI and a low depression rate might listen to "happy" genres like pop, commercial and so on. To conclude, since music is listened all over the world, we tried to understand if the spreadest genres in each country are related to "how people feel" internally, to how they live and to how they are used to see the world in their environment.</p> 										
-									</div>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/lastfm.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">DATASETS</h2>
-										<p>In our project we used many datasets. The first one was taken from "last.fm Web Services": we used their API, after getting signed up and once obtained the key to use them, to get the information we needed about music distribution all over the world. The API methods we used were "geo.getTopTracks" (in order to get the most popular tracks on Last.fm about last week by country) and "track.getInfo" (in order to get the metadata for a track on Last.fm using the artist/track name). The next step was to obtain the HDI indexes. We downloaded them from <a href="http://hdr.undp.org/en/data">here</a>; we had to choose “Dimension”: HDI, then again HDI on the next picker and then download data underneath. We downloaded the depression rates data from <a href="https://ourworldindata.org/mental-health">here</a> other website. The newest data is from year 2017, so we based our research on the results we got for that year. Another dataset that was used is a list with almost 900 of the most famous music genres.</p>
-									</div>
-								</div>
-							</section>
-
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Results and conclusions</h2>
-									<p>Seeing our results, we can say that music genres aren't strictly correlated with HDI and depression rates, cause the world's tastes
-										are more or less the same worldwide, fact which also justifies the global popularity of many artists, leaders of the genre they 
-										represent. An higher correlation can be seen on many minor genres: in average, countries with an high HDI are more likely to hear
-										new genres as we can see in the graph (for example with "funk") and countries with the lowest HDI are more likely to listen to 
-										"street" and "urban" genres, like rap. The depression rate doesn't affect that much our studies because, as already said, the 
-										most famous genres are the same everywhere. The only thing we can conclude from it is that countries more incline to be depressed
-										listen to many subgeneres that countries less depressed don't. Basing ourselves on these facts, to conclude, we can say that life 
-										expectancy, education, per capita income indicators and depression rates don't indicate accurately what people listen to, but they
-										can point out how every country explores musical genres beyond the most famous ones.</p>
-										<article>
-											<a href="https://github.com/tomicakr/music-popularities-study/blob/master/graphs/depression_genres.png" class="image"><img src="graphs/depression_genres.png" alt="" style="width:950px;height:490px;"/></a>
-											<h3 class="major">Depression genres</h3>
-										</article>
-										<article>
-											<a href="https://github.com/tomicakr/music-popularities-study/blob/master/graphs/hdi_genres.png" class="image"><img src="graphs/hdi_genres.png" alt="" style="width:950px;height:490px;"/></a>
-											<h3 class="major">HDI genres</h3>
-										</article>
-									<ul class="actions">
-										<li><a href="https://github.com/tomicakr/music-popularities-study/tree/master/graphs" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
-
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">AUTHORS</h2>
-							<p>This application has been developed as final project for the subject "Cloud y Big Data" by five Erasmus students at the Universidad Complutense de Madrid:</p>
-							<ul>
-								<li>Tomislav Kravaršćan</li>
-								<li>Simon Markmann</li>
-								<li>Ena Rajković</li>
-								<li>Valerio Moroni</li>
-								<li>Yurii Shcheholiev</li>
-							</ul>
-			
-							<ul class="contact">
-								<li class="icon solid fa-envelope"><a href="#">music.popularities.study@ucm.es</a></li>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Implementation</a></li>
+					<li><a href="results.html">Results</a></li>
+					<li><a href="elements.html">Set up tutorial</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
 			</div>
+		</nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<!-- CHANGE IF HAVE TIME-->
+				<div class="logo"><span class="icon fa-gem"></span></div>
+				<h2>Music dependencies analysis</h2>
+				<p>Compare HDI and depression rates in countries to the genre popularity of music tracks</a></p>
+			</div>
+		</section>
 
-	</body>
+		<!-- Wrapper -->
+		<section id="wrapper">
+
+			<!-- One -->
+			<section id="one" class="wrapper spotlight style1">
+				<div class="inner">
+					<a href="#" class="image"><img src="images/project_pic.png" alt="" /></a>
+					<div class="content">
+						<h2 class="major">ABOUT THE PROJECT</h2>
+						<p>Our application studies how Human Development Index (HDI) and depression rates affect music
+							preferences all around the world.</p>
+						<p>The HDI is a statistic composite index of life expectancy, education, and per capita income
+							indicators, which are used to rank countries into four tiers of human development. A country
+							scores a higher HDI (between 0 and 1) when the lifespan is higher, the education level is
+							higher, and the gross national income GNI per capita is higher. Moreover, we tried to
+							associate this index with the depression rates of each country in order to understand if
+							these two affect the music genre popularity.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Two -->
+			<section id="two" class="wrapper alt spotlight style2">
+				<div class="inner">
+					<a href="#" class="image"><img src="images/target-goals.png" alt="" /></a>
+					<div class="content">
+						<h2 class="major">TARGETS</h2>
+						<p>With our project we wanted to show information that could be useful for people interested in
+							the argument, since it is for research purposes only. Our main aim was to see if music genre
+							popularities are affected by the "human growth level" and the depression rate in each
+							country. In simple terms, if we have a country with a low level of HDI and a high depression
+							rate, we wanted to check if the most popular genres tare the one considered more "sad" or
+							"emotional". At the same time, a country which has got a high score of HDI and a low
+							depression rate might listen to "happy" genres like pop, commercial and so on. To conclude,
+							since music is listened all over the world, we tried to understand if the spreadest genres
+							in each country are related to "how people feel" internally, to how they live and to how
+							they are used to see the world in their environment.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper spotlight style3">
+				<div class="inner">
+					<a href="#" class="image"><img src="images/lastfm.png" alt="" /></a>
+					<div class="content">
+						<h2 class="major">DATASETS</h2>
+						<p>In our project we used many datasets. The first one was taken from "last.fm Web Services": we
+							used their API, after getting signed up and once obtained the key to use them, to get the
+							information we needed about music distribution all over the world. The API methods we used
+							were "geo.getTopTracks" (in order to get the most popular tracks on Last.fm about last week
+							by country) and "track.getInfo" (in order to get the metadata for a track on Last.fm using
+							the artist/track name). The next step was to obtain the HDI indexes. We downloaded them from
+							<a href="http://hdr.undp.org/en/data">here</a>; we had to choose “Dimension”: HDI, then
+							again HDI on the next picker and then download data underneath. We downloaded the depression
+							rates data from <a href="https://ourworldindata.org/mental-health">here</a> other website.
+							The newest data is from year 2017, so we based our research on the results we got for that
+							year. Another dataset that was used is a list with almost 900 of the most famous music
+							genres.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="four" class="wrapper alt style1">
+				<div class="inner">
+					<h2 class="major">Results and conclusions</h2>
+					<p>Seeing our results, we can say that music genres aren't strictly correlated with HDI and
+						depression rates, cause the world's tastes
+						are more or less the same worldwide, fact which also justifies the global popularity of many
+						artists, leaders of the genre they
+						represent. An higher correlation can be seen on many minor genres: in average, countries with an
+						high HDI are more likely to hear
+						new genres as we can see in the graph (for example with "funk") and countries with the lowest
+						HDI are more likely to listen to
+						"street" and "urban" genres, like rap. The depression rate doesn't affect that much our studies
+						because, as already said, the
+						most famous genres are the same everywhere. The only thing we can conclude from it is that
+						countries more incline to be depressed
+						listen to many subgeneres that countries less depressed don't. Basing ourselves on these facts,
+						to conclude, we can say that life
+						expectancy, education, per capita income indicators and depression rates don't indicate
+						accurately what people listen to, but they
+						can point out how every country explores musical genres beyond the most famous ones.</p>
+					<article>
+						<a href="https://github.com/tomicakr/music-popularities-study/blob/master/graphs/depression_genres.png"
+							class="image"><img src="graphs/depression_genres.png" alt=""
+								style="width:950px;height:490px;" /></a>
+						<h3 class="major">Depression genres</h3>
+					</article>
+					<article>
+						<a href="https://github.com/tomicakr/music-popularities-study/blob/master/graphs/hdi_genres.png"
+							class="image"><img src="graphs/hdi_genres.png" alt=""
+								style="width:950px;height:490px;" /></a>
+						<h3 class="major">HDI genres</h3>
+					</article>
+					<ul class="actions">
+						<li><a href="https://github.com/tomicakr/music-popularities-study/tree/master/graphs"
+								class="button">Browse All</a></li>
+					</ul>
+				</div>
+			</section>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<h2 class="major">AUTHORS</h2>
+				<p>This application has been developed as final project for the subject "Cloud y Big Data" by five
+					Erasmus students at the Universidad Complutense de Madrid:</p>
+				<ul>
+					<li>Tomislav Kravaršćan</li>
+					<li>Simon Markmann</li>
+					<li>Ena Rajković</li>
+					<li>Valerio Moroni</li>
+					<li>Yurii Shcheholiev</li>
+				</ul>
+
+				<ul class="contact">
+					<li class="icon solid fa-envelope"><a href="#">music.popularities.study@ucm.es</a></li>
+					<ul class="copyright">
+						<li>&copy; Untitled Inc. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

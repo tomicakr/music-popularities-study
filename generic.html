@@ -1,93 +1,87 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Implementation</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<title>Implementation</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Music dependencies analysis</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+<body class="is-preload">
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Implementation</a></li>
-								<li><a href="results.html">Results</a></li>
-								<li><a href="elements.html">Set up tutorial</a></li>								
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+	<div id="page-wrapper">
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>Implementation</h2>
-								<p>Project grounding and problems solutions with examples</p>
-							</div>
-						</header>
+		<header id="header">
+			<h1><a href="index.html">Music dependencies analysis</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Implementation</a></li>
+					<li><a href="results.html">Results</a></li>
+					<li><a href="elements.html">Set up tutorial</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
 
-									<h3 class="major">WHY THE NEED FOR BIG DATA?</h3>
-									<p>Our project has to work with a huge amount of data and a simple application wouldn't have been suitable for many reasons. First of all, the music data: we had so many tracks, genres (around 900), artists for each country (around 194) and, moreover, we needed to process it in order to get usable results to be compared with other data taken from a totally different field, the HDI index and the depression rate (each one of these for each nation in the world). It sounds pretty clear that we couldn't have developed an application like this using simple coding or loops, since the response time would have been whopping. To solve this problem, we used two services: the Amazon Web Servers, which provided us a cluster on which we runned the code, and Apache Spark, a unified analytics engine for large-scale data processing.</p>
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Implementation</h2>
+					<p>Project grounding and problems solutions with examples</p>
+				</div>
+			</header>
 
-									<h3 class="major">HOW DOES IT WORK?</h3>
-									<p>The project is based on the map-reduce model, using as programming language Python. We developed many phases to reach the final result. In order to work with the datasets we had to do a lot of data cleaning: First of all the music data: as the API could not give us music genres of each song we had to use the tags through track.getInfo. These tags could be many different things, for example the artist or song name, the year it was published or other things that are associated with the song. To find genres in these tags we first cleaned them so that all of the data has the same structures (e.g. no capital letters or special signs like "-"). Then we used the other list with the cleaned genres to compare each tag of a song. The genres would then be added up per country. The HDI and depression rates datasets also had to be cleaned before usage. The depression rates dataset gives values for the last 15 years of each country so we only used the most recent value as it is most accurate.</p>
-										
-<!-- 									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section> -->
+			<div class="wrapper">
+				<div class="inner">
 
-								</div>
-							</div>
+					<h3 class="major">WHY THE NEED FOR BIG DATA?</h3>
+					<p>Our project has to work with a huge amount of data and a simple application wouldn't have been
+						suitable for many reasons. First of all, the music data: we had so many tracks, genres (around
+						900), artists for each country (around 194) and, moreover, we needed to process it in order to
+						get usable results to be compared with other data taken from a totally different field, the HDI
+						index and the depression rate (each one of these for each nation in the world). It sounds pretty
+						clear that we couldn't have developed an application like this using simple coding or loops,
+						since the response time would have been whopping. To solve this problem, we used two services:
+						the Amazon Web Servers, which provided us a cluster on which we runned the code, and Apache
+						Spark, a unified analytics engine for large-scale data processing.</p>
 
-					</section>
-				
-					<section>
-						<div class="wrapper">
-								<div class="inner">
-									<h3 class="major">Workflow</h3>
-									<p>Now we're going to explain how we moved through the code and the guideline followed:</p>
+					<h3 class="major">HOW DOES IT WORK?</h3>
+					<p>The project is based on the map-reduce model, using as programming language Python. We developed
+						many phases to reach the final result. In order to work with the datasets we had to do a lot of
+						data cleaning: First of all the music data: as the API could not give us music genres of each
+						song we had to use the tags through track.getInfo. These tags could be many different things,
+						for example the artist or song name, the year it was published or other things that are
+						associated with the song. To find genres in these tags we first cleaned them so that all of the
+						data has the same structures (e.g. no capital letters or special signs like "-"). Then we used
+						the other list with the cleaned genres to compare each tag of a song. The genres would then be
+						added up per country. The HDI and depression rates datasets also had to be cleaned before usage.
+						The depression rates dataset gives values for the last 15 years of each country so we only used
+						the most recent value as it is most accurate.</p>
 
-<!-- 									<h4>???</h4>
-									<blockquote>??? </blockquote> -->
-									<h4>Extract tags from last.fm API per country:</h4>
-									<pre><code>
+				</div>
+			</div>
+
+		</section>
+
+		<section>
+			<div class="wrapper">
+				<div class="inner">
+					<h3 class="major">Workflow</h3>
+					<p>Now we're going to explain how we moved through the code and the guideline followed:</p>
+
+					<h4>Extract tags from last.fm API per country:</h4>
+					<pre><code>
 def getSongInfo(mbid):
     return requests.get("http://ws.audioscrobbler.com/[...]_
                 
@@ -113,10 +107,10 @@ def createGroups(country_attribute):
 
     return country_attribute_groups</code></pre>
 
-<!-- 									<h4>???</h4>
+					<!-- 									<h4>???</h4>
 									<blockquote>??? </blockquote> -->
-									<h4>Cleanup data and filter tags:</h4>
-									<pre><code>
+					<h4>Cleanup data and filter tags:</h4>
+					<pre><code>
 def cleanup(tag_number):
     tag, number = tag_number
     newTag = tag.replace("-", " ").lower()
@@ -134,10 +128,8 @@ def cleanup(tag_number):
    	if tag in genres_dict.keys():
        		genres_dict[tag] = number</code></pre>
 
-<!-- 									<h4>???</h4>
-									<blockquote>??? </blockquote> -->
-									<h4>Count the genres per group of countries:</h4>
-									<pre><code>
+					<h4>Count the genres per group of countries:</h4>
+					<pre><code>
 for key in genres_dict.keys():
        if genres_dict[key] != 0:
           groupOut.write("{}:{}\n".format(key, genres_dict[key]))
@@ -146,7 +138,6 @@ for key in genres_dict.keys():
 						</div>				
 					</section>
 
-				<!-- Footer -->
 					<section id="footer">
  						<div class="inner">
 							<h2 class="major">AUTHORS</h2>
@@ -170,7 +161,6 @@ for key in genres_dict.keys():
 
 			</div>
 
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

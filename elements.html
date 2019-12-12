@@ -1,169 +1,141 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Elements - Solid State by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<title>Elements - Solid State by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Music dependencies analysis</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+<body class="is-preload">
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Implementation</a></li>
-								<li><a href="results.html">Results</a></li>
-								<li><a href="elements.html">Set up tutorial</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+	<div id="page-wrapper">
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>Set up tutorial</h2>
-								<p>Prerequerment and instructions for the project set up</p>
-							</div>
-						</header>
+		<header id="header">
+			<h1><a href="index.html">Music dependencies analysis</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
-
-									<section>
-										<h3 class="major">Sections</h3>
-										<div class="row">										
-											<div class="col-6 col-12-medium">
-											
-												<ol>
-													<li>Prerequirments</li>
-													<li>Usage of the application</li>
-												</ol>
-								
-											</div>
-										</div>
-									</section>
-
-									
-									<section>
-										<h3 class="major">Prerequierments</h3>
-										<p> In order to run the application some additional packages may need to be installed. Follow the guidelines described below</p>
-										<blockquote>Only for Linux/Mac operating systems! </blockquote>
-										
-										<h4>Installing python-pip:</h4>
-										<pre><code>sudo apt install python-pip</code></pre>
-										<h4>Installing requests:</h4>
-										<pre><code>pip install requests</code></pre>
-										<h4>Installing numpy:</h4>
-										<pre><code>pip install numpy</code></pre>
-										<h4>Installing matplotlib:</h4>
-										<pre><code>pip install matplotlib</code></pre>
-										
-										<h3 class="major">Usage of the application</h3>
-										<h4>Starting the depression rate calculations:</h4>
-										<pre><code>spark-submit ./calcDepression.py</code></pre>
-										<h4>Starting the hdi calculations: </h4>
-										<pre><code>spark-submit ./calcHDI.py</code></pre>
-										<h4>Displaying the depression graph:</h4>
-										<pre><code>python ./depression/analyzeDepression.py 15</code></pre>
-										<h4>Displaying the hdi graph:</h4>
-										<pre><code>python ./hdi/analyzeHDI.py 15</code></pre>
-										
-										<p>The <i>lastFM API</i> key is already hardcoded in the <i>trackGrouping.py</i> file, the one which is found inside can be used. The groups will appear in the corresponding folders, but they are also already pushed in the repository.</p>
-									</section>
-								
-									
-<!-- 									<section>
-										<h3 class="major">Image</h3>
-										<h4>Fit</h4>
-										<div class="box alt">
-											<div class="row gtr-uniform">
-												<div class="col-12"><span class="image fit"><img src="images/pic08.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h4>Left &amp; Right</h4>
-										<p><span class="image left"><img src="images/pic01.jpg" alt="" /></span>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien. Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
-										<p><span class="image right"><img src="images/pic02.jpg" alt="" /></span>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius. Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat. Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui.</p>
-									</section> -->
-									
-									<section>
-										<h3 class="major">Our GitHub</h3>
-					<!-- 												<ul class="icons">
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-												</ul> -->
-										<ul class="actions fit">
-											<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a><a href="https://github.com/tomicakr/music-popularities-study" class="button primary fit">Go to</a></li>
-										</ul>
-
-									</section>
-									
-								</div>
-							</div>
-					</section>
-					
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">AUTHORS</h2>
-							<p>This application has been developed as final project for the subject "Cloud y Big Data" by five Erasmus students at the Universidad Complutense de Madrid:</p>
-							<ul>
-								<li>Tomislav Kravaršćan</li>
-								<li>Simon Markmann</li>
-								<li>Ena Rajković</li>
-								<li>Valerio Moroni</li>
-								<li>Yurii Shcheholiev</li>
-							</ul>
-							
-							<ul class="contact">								
-								<li class="icon solid fa-envelope"><a href="#">music.dependencies.analysis@ucm.es</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-					
-
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Implementation</a></li>
+					<li><a href="results.html">Results</a></li>
+					<li><a href="elements.html">Set up tutorial</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
 			</div>
+		</nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Set up tutorial</h2>
+					<p>Prerequerment and instructions for the project set up</p>
+				</div>
+			</header>
 
-	</body>
+			<div class="wrapper">
+				<div class="inner">
+
+					<section>
+						<h3 class="major">Sections</h3>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+
+								<ol>
+									<li>Prerequirments</li>
+									<li>Usage of the application</li>
+								</ol>
+
+							</div>
+						</div>
+					</section>
+
+
+					<section>
+						<h3 class="major">Prerequierments</h3>
+						<p> In order to run the application some additional packages may need to be installed. Follow
+							the guidelines described below</p>
+						<blockquote>Only for Linux/Mac operating systems! </blockquote>
+
+						<h4>Installing python-pip:</h4>
+						<pre><code>sudo apt install python-pip</code></pre>
+						<h4>Installing requests:</h4>
+						<pre><code>pip install requests</code></pre>
+						<h4>Installing numpy:</h4>
+						<pre><code>pip install numpy</code></pre>
+						<h4>Installing matplotlib:</h4>
+						<pre><code>pip install matplotlib</code></pre>
+
+						<h3 class="major">Usage of the application</h3>
+						<h4>Starting the depression rate calculations:</h4>
+						<pre><code>spark-submit ./calcDepression.py</code></pre>
+						<h4>Starting the hdi calculations: </h4>
+						<pre><code>spark-submit ./calcHDI.py</code></pre>
+						<h4>Displaying the depression graph:</h4>
+						<pre><code>python ./depression/analyzeDepression.py 15</code></pre>
+						<h4>Displaying the hdi graph:</h4>
+						<pre><code>python ./hdi/analyzeHDI.py 15</code></pre>
+
+						<p>The <i>lastFM API</i> key is already hardcoded in the <i>trackGrouping.py</i> file, the one
+							which is found inside can be used. The groups will appear in the corresponding folders, but
+							they are also already pushed in the repository.</p>
+					</section>
+		</section>
+
+		<section>
+			<h3 class="major">Our GitHub</h3>
+			<ul class="actions fit">
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a><a
+						href="https://github.com/tomicakr/music-popularities-study" class="button primary fit">Go to</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+	</div>
+	</section>
+
+	<section id="footer">
+		<div class="inner">
+			<h2 class="major">AUTHORS</h2>
+			<p>This application has been developed as final project for the subject "Cloud y Big Data" by five
+				Erasmus students at the Universidad Complutense de Madrid:</p>
+			<ul>
+				<li>Tomislav Kravaršćan</li>
+				<li>Simon Markmann</li>
+				<li>Ena Rajković</li>
+				<li>Valerio Moroni</li>
+				<li>Yurii Shcheholiev</li>
+			</ul>
+
+			<ul class="contact">
+				<li class="icon solid fa-envelope"><a href="#">music.dependencies.analysis@ucm.es</a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Untitled Inc. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</section>
+
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
