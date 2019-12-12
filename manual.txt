@@ -1,0 +1,14 @@
+Starting the depression rate calculations:
+    spark-submit ./calcDepression.py
+
+Starting the hdi calculations:
+    spark-submit ./calcHDI.py
+
+Displaying the depression graph:
+    python ./depression/analyzeDepression.py 15
+
+Displaying the hdi graph:
+    python ./hdi/analyzeHDI.py 15
+
+The lastFM API key is already hardcoded in the trackGrouping.py file, the one inside can be used.
+The groups will appear in the corresponding folders, but they are also already in the repository pushed.
