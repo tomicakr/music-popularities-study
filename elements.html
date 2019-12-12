@@ -52,26 +52,7 @@
 								<div class="inner">
 
 									<section>
-										<h3 class="major">Text</h3>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<h4>Blockquote</h4>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h4>Preformatted</h4>
-										<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h3 class="major">Lists</h3>
+										<h3 class="major">Sections</h3>
 										<div class="row">
 <!-- 											<div class="col-6 col-12-medium">
 												<h4>Unordered</h4>
@@ -88,14 +69,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 												</ul>
 											</div> -->
 											<div class="col-6 col-12-medium">
-												<h4>Ordered</h4>
+												
 												<ol>
-													<li>Dolor pulvinar etiam.</li>
-													<li>Etiam vel felis viverra.</li>
-													<li>Felis enim feugiat.</li>
-													<li>Dolor pulvinar etiam.</li>
-													<li>Etiam vel felis lorem.</li>
-													<li>Felis enim et feugiat.</li>
+													<li>Prerequirments</li>
+													<li>Usage of the application</li>
+													
 												</ol>
 								
 											</div>
@@ -104,18 +82,39 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 									</section>
 
 									
-
+									<section>
+										<h3 class="major">Prerequierments</h3>
+										<p> In order to run the application some additional packages may need to be installed. Follow the guidelines described below</p>
+										<blockquote>Only for Linux/Mac operating systems! </blockquote>
+										
+										<h4>Installing python-pip:</h4>
+										<pre><code>sudo apt install python-pip</code></pre>
+										<h4>Installing requests:</h4>
+										<pre><code>pip install requests</code></pre>
+										<h4>Installing numpy:</h4>
+										<pre><code>pip install numpy</code></pre>
+										<h4>Installing matplotlib:</h4>
+										<pre><code>pip install matplotlib</code></pre>
+										
+										<h3 class="major">Usage of the application</h3>
+										<h4>Starting the depression rate calculations:</h4>
+										<pre><code>spark-submit ./calcDepression.py</code></pre>
+										<h4>Starting the hdi calculations: </h4>
+										<pre><code>spark-submit ./calcHDI.py</code></pre>
+										<h4>Displaying the depression graph:</h4>
+										<pre><code>python ./depression/analyzeDepression.py 15</code></pre>
+										<h4>Displaying the hdi graph:</h4>
+										<pre><code>python ./hdi/analyzeHDI.py 15</code></pre>
+									</section>
+									
 									<section>
 										<h3 class="major">Our GitHub</h3>
-										
-										<h4>Icons</h4>
-												<ul class="icons">
+<!-- 												<ul class="icons">
 													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-												</ul>
+												</ul> -->
 										<ul class="actions fit">
-<!-- 											<li><a href="#" class="button fit">Fit</a></li> -->
+											<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 											<li><a href="https://github.com/tomicakr/music-popularities-study" class="button primary fit">Fit</a></li>
-<!-- 											<li><a href="#" class="button fit">Fit</a></li> -->
 										</ul>
 										
 									</section>
@@ -152,7 +151,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<p></p>
 							
 							<ul class="contact">
 <!-- 								<li class="icon solid fa-home">
